@@ -1,0 +1,124 @@
+.header {
+  padding: 10px;
+}
+
+.header a {
+  text-decoration: none;
+  color: black;
+}
+.header h1 {
+  padding: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* .header h1 a {
+} */
+
+.header .login {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  font-size: 13px;
+}
+
+/* .header .login a {
+} */
+
+.header .bt_menu {
+  border: 0px;
+  outline: none;
+  position: fixed;
+  top: 20px;
+  left: 33px;
+  z-index: 500;
+  width: 40px;
+  height: 40px;
+}
+
+.header .bt_menu img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.header .menu {
+  position: fixed;
+  top: 0;
+  left: -348px;
+  width: 348px;
+  height: 100%;
+  z-index: 300;
+  padding: 94px 40px 189px;
+  background-color: white;
+  transition: left 0.5s ease-in-out;
+}
+
+.header .menu.on {
+  left: 0;
+}
+
+.header .menu p {
+  text-align: left;
+  font-size: 12px;
+  color: grey;
+}
+
+.header .menu .gnb {
+  overflow: auto;
+  height: 100%;
+  margin-bottom: 8px;
+}
+
+.header .menu .gnb ul li {
+  list-style: none;
+}
+
+.header .menu .gnb .ul_forum_list {
+  position: relative;
+  line-height: 30px;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list {
+  margin-bottom: 10px;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum {
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: 700;
+  font-size: 18px;
+  color: #009ae1;
+  background: white;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum.slide {
+  color: blue;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum:hover {
+  color: blue;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .ul_forum {
+  display: none;
+  padding-left: 20px;
+  font-size: 18px;
+  width: 100%;
+  text-align: left;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .ul_forum.slide {
+  display: block;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .ul_forum li {
+  padding-top: 5px;
+}
+
+.header .menu .gnb .ul_forum_list .li_forum_list .ul_forum li a {
+  color: lightgray;
+}
+.header .menu .gnb .ul_forum_list .li_forum_list .ul_forum li a:hover {
+  color: black;
+}
