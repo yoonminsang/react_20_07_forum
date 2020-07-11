@@ -1,38 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./stylesheets/Header.css";
 
 const Header = () => {
+  const [menu, setMenu] = useState(false);
   const changeMenu = () => {
-    const btMenu = document.querySelector(".bt_menu");
-    const btMenuImg = document.querySelector(".bt_menu img");
-    const menu = document.querySelector(".menu");
-    if (btMenu.className === "bt_menu") {
-      btMenuImg.src = "img/menuOn.png";
-      btMenuImg.alt = "menuOn";
-      btMenu.classList.add("on");
-      menu.classList.add("on");
+    if (menu === true) {
+      setMenu(false);
+      document.getElementById("dimmed").remove();
+    } else {
+      setMenu(true);
       let dimmed = document.createElement("div");
       dimmed.id = "dimmed";
       document.body.append(dimmed);
-    } else {
-      btMenuImg.src = "img/menu.png";
-      btMenuImg.alt = "menu";
-      btMenu.classList.remove("on");
-      menu.classList.remove("on");
-      document.querySelector("#dimmed").remove();
     }
   };
 
-  const slide = (e) => {
-    if (e.target.className === "bt_forum") {
-      e.target.classList.add("slide");
-      e.target.nextSibling.classList.add("slide");
-    } else {
-      e.target.classList.remove("slide");
-      e.target.nextSibling.classList.remove("slide");
-    }
-  };
+  const [forum, setForum] = useState(null);
 
   return (
     <header className="header">
@@ -42,35 +26,96 @@ const Header = () => {
       <div className="login">
         <Link to="/auth/login">로그인 / 회원가입</Link>
       </div>
-      <button className="bt_menu" onClick={changeMenu}>
-        <img src="img/menu.png" alt="menu" />
+      <button
+        className={menu === true ? "bt_menu on" : "bt_menu"}
+        onClick={changeMenu}
+      >
+        {menu === true ? (
+          <img src="img/menuOn.png" alt="menuOn" />
+        ) : (
+          <img src="img/menu.png" alt="menu" />
+        )}
       </button>
-      <div className="menu">
+      <div className={menu === true ? "menu on" : "menu"}>
         <nav className="gnb">
           <ul className="ul_forum_list">
             <li className="li_forum_list">
-              <button type="button" className="bt_forum" onClick={slide}>
+              <button
+                type="button"
+                className={forum === "recent" ? "bt_forum slide" : "bt_forum"}
+                onClick={() =>
+                  forum === "recent" ? setForum(null) : setForum("recent")
+                }
+              >
                 최근 게시판
               </button>
-              <ul className="ul_forum recent"></ul>
+              <ul
+                className={
+                  forum === "recent"
+                    ? "ul_forum recent slide"
+                    : "ul_forum recent"
+                }
+              >
+                <li>1</li>
+              </ul>
             </li>
             <li className="li_forum_list">
-              <button type="button" className="bt_forum" onClick={slide}>
+              <button
+                type="button"
+                className={forum === "popular" ? "bt_forum slide" : "bt_forum"}
+                onClick={() =>
+                  forum === "popular" ? setForum(null) : setForum("popular")
+                }
+              >
                 인기 게시판
               </button>
-              <ul className="ul_forum popular"></ul>
+              <ul
+                className={
+                  forum === "popular"
+                    ? "ul_forum popular slide"
+                    : "ul_forum popular"
+                }
+              >
+                <li>1</li>
+              </ul>
             </li>
             <li className="li_forum_list">
-              <button type="button" className="bt_forum" onClick={slide}>
+              <button
+                type="button"
+                className={forum === "request" ? "bt_forum slide" : "bt_forum"}
+                onClick={() =>
+                  forum === "request" ? setForum(null) : setForum("request")
+                }
+              >
                 요청 게시판
               </button>
-              <ul className="ul_forum request"></ul>
+              <ul
+                className={
+                  forum === "request"
+                    ? "ul_forum request slide"
+                    : "ul_forum request"
+                }
+              >
+                <li>1</li>
+              </ul>
             </li>
             <li className="li_forum_list">
-              <button type="button" className="bt_forum" onClick={slide}>
+              <button
+                type="button"
+                className={forum === "all" ? "bt_forum slide" : "bt_forum"}
+                onClick={() =>
+                  forum === "all" ? setForum(null) : setForum("all")
+                }
+              >
                 전체 게시판
               </button>
-              <ul className="ul_forum all"></ul>
+              <ul
+                className={
+                  forum === "all" ? "ul_forum all slide" : "ul_forum all"
+                }
+              >
+                <li>1</li>
+              </ul>
             </li>
           </ul>
         </nav>

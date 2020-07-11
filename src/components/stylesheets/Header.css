@@ -12,18 +12,12 @@
   text-align: center;
 }
 
-/* .header h1 a {
-} */
-
 .header .login {
   position: absolute;
   top: 30px;
   right: 100px;
   font-size: 13px;
 }
-
-/* .header .login a {
-} */
 
 .header .bt_menu {
   border: 0px;
