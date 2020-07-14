@@ -1,0 +1,22 @@
+.mManage {
+  background: #f3f5f7;
+}
+
+.mManage .mContent {
+  position: relative;
+  width: 1150px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.mManage .mContent .mArticle {
+  float: right;
+  background: white;
+  width: 894px;
+}
+
+.mManage .mContent::after {
+  display: block;
+  clear: both;
+  content: "";
+}

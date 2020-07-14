@@ -5,5 +5,10 @@
 .footer .copyright {
   text-align: center;
   font-size: 12px;
-  color: grey;
+  color: gray;
+}
+
+.footer .copyright a {
+  color: gray;
+  text-decoration: none;
 }

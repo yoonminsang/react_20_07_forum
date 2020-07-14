@@ -1,0 +1,45 @@
+.mMenu {
+  float: left;
+  background: white;
+  width: 216px;
+  border: 1px solid #e0e5ee;
+}
+
+.mMenu a {
+  color: black;
+  text-decoration: none;
+}
+
+.mMenu .wrap:first-child {
+  font-weight: bold;
+}
+
+.mMenu .wrap {
+  padding: 5px 0;
+  border-bottom: 1px solid #f1f3f6;
+}
+
+.mMenu .wrap img {
+  width: 40px;
+  height: 40px;
+}
+
+.wrap a span,
+.wrap .tit_menu span {
+  position: relative;
+  top: -10px;
+}
+
+.mMenu .wrap .list_menu {
+  padding-left: 35px;
+}
+
+.mMenu .wrap .list_menu li {
+  list-style: none;
+  font-size: 13px;
+  margin: 10px;
+}
+
+.mMenu .wrap .list_menu li a {
+  color: #555;
+}

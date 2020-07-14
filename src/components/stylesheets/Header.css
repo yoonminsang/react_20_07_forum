@@ -12,14 +12,14 @@
   text-align: center;
 }
 
-.header .login {
+.header .signin {
   position: absolute;
   top: 30px;
   right: 100px;
   font-size: 13px;
 }
 
-.header .bt_menu {
+.header .btn_menu {
   border: 0px;
   outline: none;
   position: fixed;
@@ -30,7 +30,7 @@
   height: 40px;
 }
 
-.header .bt_menu img {
+.header .btn_menu img {
   width: 100%;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@
   margin-bottom: 10px;
 }
 
-.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum {
+.header .menu .gnb .ul_forum_list .li_forum_list .btn_forum {
   border: none;
   width: 100%;
   text-align: left;
@@ -86,11 +86,11 @@
   background: white;
 }
 
-.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum.slide {
+.header .menu .gnb .ul_forum_list .li_forum_list .btn_forum.slide {
   color: blue;
 }
 
-.header .menu .gnb .ul_forum_list .li_forum_list .bt_forum:hover {
+.header .menu .gnb .ul_forum_list .li_forum_list .btn_forum:hover {
   color: blue;
 }
 

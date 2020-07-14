@@ -23,26 +23,29 @@ const Header = () => {
       <h1>
         <Link to="/">M's Forum</Link>
       </h1>
-      <div className="login">
-        <Link to="/auth/login">로그인 / 회원가입</Link>
+
+      <div className="signin">
+        <Link to="/auth/signin">로그인 / 회원가입</Link>
       </div>
+
       <button
-        className={menu === true ? "bt_menu on" : "bt_menu"}
+        className={menu === true ? "btn_menu on" : "btn_menu"}
         onClick={changeMenu}
       >
         {menu === true ? (
-          <img src="img/menuOn.png" alt="menuOn" />
+          <img src="/img/menuOn.png" alt="menuOn" />
         ) : (
-          <img src="img/menu.png" alt="menu" />
+          <img src="/img/menu.png" alt="menu" />
         )}
       </button>
+
       <div className={menu === true ? "menu on" : "menu"}>
         <nav className="gnb">
           <ul className="ul_forum_list">
             <li className="li_forum_list">
               <button
                 type="button"
-                className={forum === "recent" ? "bt_forum slide" : "bt_forum"}
+                className={forum === "recent" ? "btn_forum slide" : "btn_forum"}
                 onClick={() =>
                   forum === "recent" ? setForum(null) : setForum("recent")
                 }
@@ -62,7 +65,9 @@ const Header = () => {
             <li className="li_forum_list">
               <button
                 type="button"
-                className={forum === "popular" ? "bt_forum slide" : "bt_forum"}
+                className={
+                  forum === "popular" ? "btn_forum slide" : "btn_forum"
+                }
                 onClick={() =>
                   forum === "popular" ? setForum(null) : setForum("popular")
                 }
@@ -82,7 +87,9 @@ const Header = () => {
             <li className="li_forum_list">
               <button
                 type="button"
-                className={forum === "request" ? "bt_forum slide" : "bt_forum"}
+                className={
+                  forum === "request" ? "btn_forum slide" : "btn_forum"
+                }
                 onClick={() =>
                   forum === "request" ? setForum(null) : setForum("request")
                 }
@@ -102,7 +109,7 @@ const Header = () => {
             <li className="li_forum_list">
               <button
                 type="button"
-                className={forum === "all" ? "bt_forum slide" : "bt_forum"}
+                className={forum === "all" ? "btn_forum slide" : "btn_forum"}
                 onClick={() =>
                   forum === "all" ? setForum(null) : setForum("all")
                 }

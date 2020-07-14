@@ -1,0 +1,51 @@
+.manage_header {
+  background: white;
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px;
+}
+
+.manage_header a {
+  color: black;
+  text-decoration: none;
+}
+
+.manage_header h1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px;
+}
+
+.manage_header .create {
+  width: 118px;
+  height: 38px;
+  padding: 0 23px;
+  border-radius: 20px;
+  border: 1px solid black;
+  background: black;
+  color: white;
+  font-size: 14px;
+  line-height: 38px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  right: 270px;
+  transition: all 0.2s ease-in-out;
+}
+
+.manage_header .create:hover {
+  background-color: #f54;
+  border: 1px solid #f54;
+  transition: all 0.2s ease-in-out;
+}
+
+.manage_header .home {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.manage_header .home img {
+  width: 40px;
+  height: 40px;
+}
