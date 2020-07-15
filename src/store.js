@@ -1,17 +1,16 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { createStore } from "redux";
 
-const login = createSlice({
-  name: "loginReducer",
-  initialState: [],
-  reducers: {
-    add: (state, action) => {
-      state.push({ text: action.payload, id: Date.now() });
-    },
-    remove: (state, action) =>
-      state.filter((toDo) => toDo.id !== action.payload),
-  },
-});
-
-export const { add, remove } = login.actions;
-
-export default configureStore({ reducer: login.reducer });
+export default createStore(function (state, action) {
+  if (state === undefined) {
+    return { user: null };
+  }
+  switch (action.type) {
+    case "SIGNIN":
+      return { ...state, user: action.user };
+    case "SIGNOUT":
+      return { ...state, user: null };
+    default:
+      return state;
+  }
+}, window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__());

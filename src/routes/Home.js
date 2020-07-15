@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import "./stylesheets/Home.css";
-import { Header, Footer } from "../components";
+import { Footer } from "../components";
+import { Header } from "../containers";
+
 const Home = () => {
   useEffect(() => {
     document.title = "M's forum";
+    window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <Header></Header>

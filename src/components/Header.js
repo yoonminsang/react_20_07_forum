@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./stylesheets/Header.css";
+import axios from "axios";
 
-const Header = () => {
+const Header = ({ rDisplayName, signOutSuccess }) => {
+  const [displayName, setDisplayName] = useState(null);
+  useEffect(() => {
+    setDisplayName(rDisplayName);
+  }, [rDisplayName]);
+
   const [menu, setMenu] = useState(false);
   const changeMenu = () => {
     if (menu === true) {
@@ -18,6 +24,19 @@ const Header = () => {
 
   const [forum, setForum] = useState(null);
 
+  const signOut = () => {
+    axios
+      .get("/auth/logout")
+      .then(function (res) {
+        if (res.data.logout) {
+          signOutSuccess();
+        }
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  };
+
   return (
     <header className="header">
       <h1>
@@ -25,7 +44,14 @@ const Header = () => {
       </h1>
 
       <div className="signin">
-        <Link to="/auth/signin">로그인 / 회원가입</Link>
+        {displayName === null ? (
+          <Link to="/auth/signin">로그인 / 회원가입</Link>
+        ) : (
+          <Link to="#" onClick={() => signOut()}>
+            <div className="displayName">{displayName}</div>
+            로그아웃
+          </Link>
+        )}
       </div>
 
       <button
@@ -59,7 +85,9 @@ const Header = () => {
                     : "ul_forum recent"
                 }
               >
-                <li>1</li>
+                <li>
+                  <Link to="/">123</Link>
+                </li>
               </ul>
             </li>
             <li className="li_forum_list">

@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "./stylesheets/AuthSign.css";
-import { Header, Footer } from "../components";
+import { Footer } from "../components";
+import { Header } from "../containers";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useInput } from "../hooks";
 
-const AuthSignIn = () => {
+const AuthSignIn = ({ history, signInSuccess }) => {
   useEffect(() => {
     document.title = "M's forum 로그인";
+    window.scrollTo(0, 0);
   }, []);
+
   const emailMaxLen = (value) => value.length <= 40;
   const email = useInput(emailMaxLen);
   const passwordMaxLen = (value) => value.length <= 20;
@@ -23,7 +26,7 @@ const AuthSignIn = () => {
       alert("비밀번호를 입력하세요");
       return false;
     }
-    const self = this;
+
     axios({
       method: "post",
       url: "/auth/signin_process",
@@ -33,7 +36,12 @@ const AuthSignIn = () => {
       },
     })
       .then(function (res) {
-        console.log(res.data);
+        if (res.data.user) {
+          signInSuccess(res.data.user);
+          history.push("/");
+        } else {
+          alert(res.data);
+        }
       })
       .catch(function (err) {
         console.log(err);

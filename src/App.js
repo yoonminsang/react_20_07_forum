@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./App.css";
-import { Home, AuthSignIn, AuthSignUp, ManageHome } from "./routes";
+import { Home, ManageHome } from "./routes";
+import { AuthSignIn, AuthSignUp } from "./containers";
+import axios from "axios";
 
-const App = () => {
+const App = ({ autoSignIn }) => {
+  useEffect(() => {
+    axios
+      .get("/logged")
+      .then(function (res) {
+        if (res.data.user) {
+          autoSignIn(res.data.user);
+        }
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <BrowserRouter>
       <Switch>

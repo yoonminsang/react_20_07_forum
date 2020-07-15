@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useInput } from "../hooks";
 
-const Home = () => {
+const AuthSignUp = ({ history, signInSuccess }) => {
   useEffect(() => {
     document.title = "M's forum 회원가입";
+    window.scrollTo(0, 0);
   }, []);
+
   const emailMaxLen = (value) => value.length <= 40;
   const email = useInput(emailMaxLen);
   const passwordMaxLen = (value) => value.length <= 20;
@@ -33,7 +35,6 @@ const Home = () => {
       return false;
     }
 
-    const self = this;
     axios({
       method: "post",
       url: "/auth/signup_process",
@@ -44,6 +45,13 @@ const Home = () => {
       },
     })
       .then(function (res) {
+        if (res.data.user) {
+          alert(res.data.user.displayName + "님 가입을 축하합니다");
+          signInSuccess(res.data.user);
+          history.push("/");
+        } else {
+          alert(res.data);
+        }
         console.log(res.data);
       })
       .catch(function (err) {
@@ -102,4 +110,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AuthSignUp;
