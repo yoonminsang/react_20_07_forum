@@ -1,10 +1,10 @@
-import Header from "../components/Header";
+import { Header } from "../components";
 import { connect } from "react-redux";
 function mapStateToProps(state) {
   if (state.user !== null) {
-    return { rDisplayName: state.user.displayName };
+    return { displayName: state.user.displayName };
   }
-  return { rDisplayName: state.user };
+  return { displayName: state.user };
 }
 function mapDispatchToProps(dispatch) {
   return {

@@ -1,0 +1,188 @@
+.mArticle {
+  float: right;
+  width: 894px;
+}
+
+.mArticle a {
+  text-decoration: none;
+}
+
+.mArticle h3 {
+  font-size: 18px;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+.wrap_set {
+  background: #fff;
+  border-radius: 1px;
+  border: 1px solid #e0e5ee;
+  padding: 25px 29px 0;
+}
+
+.wrap_set .st_desc {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.wrap_set .desc {
+  font-size: 13px;
+  color: #808080;
+  margin-top: 4px;
+}
+
+.wrap_set .set_order {
+  margin: 21px 0 30px;
+  padding: 8px;
+  border-radius: 1px;
+  background: #e7edf3;
+}
+
+.bundle_item:last-child {
+  margin-bottom: 7px;
+}
+
+.set_order .item_order {
+  padding: 0 19px;
+  height: 52px;
+  /* margin-bottom: -1px; */
+  border: 1px solid #e0e5ee;
+  font-size: 16px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.set_order .item_order:hover {
+  border-color: #a5adba;
+}
+
+.set_order .item_order:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+.set_order .wrap_drag {
+  float: left;
+  margin: 5px 0 0 20px;
+  padding: 10px;
+}
+
+.bundle_item:first-child .wrap_drag {
+  margin-left: 0;
+}
+
+.set_order .wrap_drag img {
+  width: 15px;
+  height: 15px;
+}
+
+.set_order .wrap_name {
+  float: left;
+  width: 320px;
+  margin-right: 10px;
+}
+
+.set_order .txt_name {
+  float: left;
+  overflow: hidden;
+  width: auto;
+  max-width: 260px;
+  margin-top: 16.6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.set_order .txt_count {
+  float: left;
+  margin: 16px 0 0 6px;
+  font-size: 13px;
+  color: #808080;
+}
+
+.set_order .txt_cate {
+  float: left;
+  width: 150px;
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+}
+
+.set_order .txt_cate::before {
+  display: inline-block;
+  width: 1px;
+  height: 18px;
+  margin-right: 15px;
+  background: #d8dee4;
+  vertical-align: top;
+  content: "";
+}
+
+.item_order .btn_info {
+  display: none;
+  float: right;
+  margin: 14px 0 0;
+}
+
+.item_order:hover .btn_info {
+  display: block;
+}
+
+.btn_info .btn_post {
+  border: 1px solid #c5cdd7;
+  float: left;
+  width: 38px;
+  height: 23px;
+  margin: 0 0 0 4px;
+  padding: 5px 0 0;
+  font-size: 12px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.set_order .btn_wrap_add {
+  border: 1px dotted #acb3bf;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  background: none;
+  color: #808080;
+}
+
+.set_order .btn_wrap_add:hover {
+  border-color: #828c9b;
+  color: black;
+}
+
+.wrap_set .btn_set {
+  overflow: hidden;
+  margin: 0 -29px;
+  padding: 12px 29px 12px;
+  border-top: 1px solid #f1f3f6;
+  background: #fafbfc;
+}
+
+.btn_set .btn_save {
+  float: right;
+  width: 158px;
+  height: 38px;
+  font-size: 13.5px;
+  line-height: 40px;
+  border-radius: 1px;
+  border: 1px solid #333;
+  color: #fff;
+  background: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  box-sizing: content-box;
+}
+.btn_set .btn_save:hover {
+  border-color: #505050;
+  background: #505050;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.23);
+}

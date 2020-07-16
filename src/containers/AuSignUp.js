@@ -1,4 +1,4 @@
-import AuthSignIn from "../routes/AuthSignIn";
+import { AuSignUp } from "../components";
 import { connect } from "react-redux";
 function mapDispatchToProps(dispatch) {
   return {
@@ -7,4 +7,4 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
-export default connect(null, mapDispatchToProps)(AuthSignIn);
+export default connect(null, mapDispatchToProps)(AuSignUp);

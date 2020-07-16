@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./stylesheets/Home.css";
-import { Footer } from "../components";
-import { Header } from "../containers";
+import { Header, Footer } from "../containers";
 
 const Home = () => {
   useEffect(() => {

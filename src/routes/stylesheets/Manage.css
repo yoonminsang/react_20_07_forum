@@ -6,13 +6,7 @@
   position: relative;
   width: 1150px;
   margin: 0 auto;
-  padding: 100px 0;
-}
-
-.mManage .mContent .mArticle {
-  float: right;
-  background: white;
-  width: 894px;
+  padding: 30px 0;
 }
 
 .mManage .mContent::after {

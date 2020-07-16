@@ -1,15 +1,15 @@
 import React, { useEffect } from "react";
 import "./stylesheets/Manage.css";
-import { ManageHeader, ManageMenu, MaHome } from "../components";
+import { ManageHeader, ManageMenu, MaCategory } from "../components";
 import { Footer } from "../containers";
-const ManageHome = () => {
+const ManageCategory = () => {
   return (
     <>
       <div className="mManage">
         <ManageHeader></ManageHeader>
         <div className="mContent">
           <ManageMenu></ManageMenu>
-          <MaHome></MaHome>
+          <MaCategory></MaCategory>
         </div>
         <Footer></Footer>
       </div>
@@ -17,4 +17,4 @@ const ManageHome = () => {
   );
 };
 
-export default ManageHome;
+export default ManageCategory;

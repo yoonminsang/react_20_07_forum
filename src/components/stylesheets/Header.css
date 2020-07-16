@@ -26,7 +26,7 @@
   position: fixed;
   top: 20px;
   left: 33px;
-  z-index: 500;
+  z-index: 300;
   width: 40px;
   height: 40px;
 }
@@ -42,7 +42,7 @@
   left: -348px;
   width: 348px;
   height: 100%;
-  z-index: 300;
+  z-index: 200;
   padding: 94px 40px 189px;
   background-color: white;
   transition: left 0.5s ease-in-out;
@@ -81,7 +81,7 @@
   border: none;
   width: 100%;
   text-align: left;
-  font-weight: 700;
+  font-weight: bold;
   font-size: 18px;
   color: #009ae1;
   background: white;

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./stylesheets/ManageHeader.css";
 
 const ManageHeader = () => {
+  useEffect(() => {
+    document.title = "M's forum 관리자 ";
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <header className="manage_header">
       <h1>
