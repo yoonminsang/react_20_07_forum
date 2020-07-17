@@ -34,7 +34,8 @@ select {
   padding: 0;
 }
 
-button {
+button,
+select {
   cursor: pointer;
   outline: none;
 }
