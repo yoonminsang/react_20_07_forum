@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { useInput } from "../hooks";
 
-const MaCategory_AddItems = ({
-  categoryCancle,
-  categoryConfirm,
+const MaCategory_ModifyItems = ({
+  id,
+  category_name,
+  subject_id,
+  subject_name,
   allSubject,
+  categoryMCancl,
+  categoryMConfirm,
 }) => {
   const nameMaxLen = (value) => value.length <= 20;
-  const name = useInput("", nameMaxLen);
+  const name = useInput(category_name, nameMaxLen);
   const [menu, setMenu] = useState(false);
   const changeMenu = () => {
     menu === true ? setMenu(false) : setMenu(true);
   };
-  const [subjectName, setSubjectName] = useState("주제없음");
-  const [subjectId, setSubjectId] = useState(1);
+  const [subjectName, setSubjectName] = useState(subject_name);
+  const [subjectId, setSubjectId] = useState(subject_id);
 
   return (
     <>
@@ -21,7 +25,7 @@ const MaCategory_AddItems = ({
         <div className="item_order">
           <form
             className="edit_item"
-            onSubmit={categoryConfirm(name.value, subjectId, subjectName)}
+            onSubmit={categoryMConfirm(name.value, subjectId, subjectName, id)}
           >
             <input type="text" className="tf_blog" {...name}></input>
             <div className={menu === true ? "opt_blog opt_open" : "opt_blog"}>
@@ -52,7 +56,7 @@ const MaCategory_AddItems = ({
               <button
                 type="reset"
                 className="btn_cancel"
-                onClick={categoryCancle}
+                onClick={categoryMCancl}
               >
                 취소
               </button>
@@ -72,4 +76,4 @@ const MaCategory_AddItems = ({
     </>
   );
 };
-export default MaCategory_AddItems;
+export default MaCategory_ModifyItems;

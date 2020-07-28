@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./stylesheets/Manage.css";
-import { ManageHeader, ManageMenu } from "../components";
+import { ManageHeader, ManageMenu, MaNotice } from "../components";
 import { Footer } from "../containers";
-
-const ManageNotice = () => {
-  useEffect(() => {
-    document.title = "M's forum 관리자 공지";
-    window.scrollTo(0, 0);
-  }, []);
+const ManageCategory = () => {
   return (
     <>
       <div className="mManage">
         <ManageHeader></ManageHeader>
         <div className="mContent">
           <ManageMenu></ManageMenu>
-          <div className="mArticle">공지</div>
+          <div className="mArticle">
+            <MaNotice></MaNotice>
+          </div>
         </div>
         <Footer></Footer>
       </div>
@@ -22,4 +19,4 @@ const ManageNotice = () => {
   );
 };
 
-export default ManageNotice;
+export default ManageCategory;

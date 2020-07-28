@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MaCategory_Items = ({
+  id,
   index,
-  name,
+  category_name,
   subject_id,
   subject_name,
   counting,
+  categoryModify,
   categoryDelete,
 }) => {
   return (
@@ -15,22 +17,28 @@ const MaCategory_Items = ({
         <div className="item_order">
           <div className="basic_item">
             <div className="wrap_drag">
-              <img src="/img/category.png" alt="category"></img>
+              <span className="ico_blog ico_drag"></span>
             </div>
             <div style={{ display: "inline" }}>
               <div className="wrap_name">
-                <span className="txt_name">{name}</span>
+                <span className="txt_name">{category_name}</span>
                 <span className="txt_count">({counting})</span>
               </div>
-              <span className="txt_cate">{subject_name}</span>
+              <span id={subject_id} className="txt_cate">
+                {subject_name}
+              </span>
               <div className="info_btn">
-                <Link to="#" className="btn_post">
+                <Link
+                  to="#"
+                  className="btn_post"
+                  onClick={categoryModify(index)}
+                >
                   수정
                 </Link>
                 <Link
                   to="#"
                   className="btn_post"
-                  onClick={categoryDelete(index)}
+                  onClick={categoryDelete(index, id)}
                 >
                   삭제
                 </Link>

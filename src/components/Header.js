@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./stylesheets/Header.css";
 import axios from "axios";
@@ -9,6 +9,7 @@ const Header = ({ displayName, signOutSuccess }) => {
     if (menu === true) {
       setMenu(false);
       document.getElementById("dimmed").remove();
+      setForum(null);
     } else {
       setMenu(true);
       let dimmed = document.createElement("div");

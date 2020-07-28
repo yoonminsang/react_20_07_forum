@@ -21,8 +21,6 @@
 }
 
 .header .btn_menu {
-  border: 0px;
-  outline: none;
   position: fixed;
   top: 20px;
   left: 33px;
@@ -33,7 +31,6 @@
 
 .header .btn_menu img {
   width: 100%;
-  cursor: pointer;
 }
 
 .header .menu {
@@ -78,13 +75,11 @@
 }
 
 .header .menu .gnb .ul_forum_list .li_forum_list .btn_forum {
-  border: none;
   width: 100%;
   text-align: left;
   font-weight: bold;
   font-size: 18px;
   color: #009ae1;
-  background: white;
 }
 
 .header .menu .gnb .ul_forum_list .li_forum_list .btn_forum.slide {

@@ -6,3 +6,4 @@ export { default as ManageHeader } from "./ManageHeader";
 export { default as ManageMenu } from "./ManageMenu";
 export { default as MaHome } from "./MaHome";
 export { default as MaCategory } from "./MaCategory";
+export { default as MaNotice } from "./MaNotice";

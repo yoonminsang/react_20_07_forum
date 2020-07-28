@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const useInput = (validator) => {
-  const [value, setValue] = useState("");
+const useInput = (initialValue, validator) => {
+  const [value, setValue] = useState(initialValue);
   const onChange = (event) => {
     const {
       target: { value },

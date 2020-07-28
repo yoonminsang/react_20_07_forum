@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./stylesheets/Manage.css";
 import { ManageHeader, ManageMenu, MaCategory } from "../components";
 import { Footer } from "../containers";
@@ -9,7 +9,9 @@ const ManageCategory = () => {
         <ManageHeader></ManageHeader>
         <div className="mContent">
           <ManageMenu></ManageMenu>
-          <MaCategory></MaCategory>
+          <div className="mArticle">
+            <MaCategory></MaCategory>
+          </div>
         </div>
         <Footer></Footer>
       </div>

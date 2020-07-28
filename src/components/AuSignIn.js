@@ -7,9 +7,9 @@ import { useInput } from "../hooks";
 const AuSignIn = ({ signInSuccess }) => {
   const history = useHistory();
   const emailMaxLen = (value) => value.length <= 40;
-  const email = useInput(emailMaxLen);
+  const email = useInput("", emailMaxLen);
   const passwordMaxLen = (value) => value.length <= 20;
-  const password = useInput(passwordMaxLen);
+  const password = useInput("", passwordMaxLen);
   const signIn = (e) => {
     e.preventDefault();
     if (email.value === "") {

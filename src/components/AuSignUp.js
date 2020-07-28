@@ -7,12 +7,12 @@ import { useInput } from "../hooks";
 const AuthSignUp = ({ signInSuccess }) => {
   const history = useHistory();
   const emailMaxLen = (value) => value.length <= 40;
-  const email = useInput(emailMaxLen);
+  const email = useInput("", emailMaxLen);
   const passwordMaxLen = (value) => value.length <= 20;
-  const password = useInput(passwordMaxLen);
-  const password2 = useInput(passwordMaxLen);
+  const password = useInput("", passwordMaxLen);
+  const password2 = useInput("", passwordMaxLen);
   const displayNameMaxLen = (value) => value.length <= 10;
-  const displayName = useInput(displayNameMaxLen);
+  const displayName = useInput("", displayNameMaxLen);
 
   const signUp = (e) => {
     e.preventDefault();

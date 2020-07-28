@@ -9,7 +9,9 @@ const ManageHome = () => {
         <ManageHeader></ManageHeader>
         <div className="mContent">
           <ManageMenu></ManageMenu>
-          <MaHome></MaHome>
+          <div className="mArticle">
+            <MaHome></MaHome>
+          </div>
         </div>
         <Footer></Footer>
       </div>

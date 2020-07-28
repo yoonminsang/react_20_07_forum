@@ -14,3 +14,200 @@
   clear: both;
   content: "";
 }
+
+.mManage .mArticle {
+  float: right;
+  width: 894px;
+}
+
+.mManage .mArticle a {
+  text-decoration: none;
+  color: #333;
+}
+
+.mManage .mArticle .tit_cont {
+  font-size: 18px;
+  color: #000;
+  padding-bottom: 10px;
+}
+
+.opt_blog {
+  position: relative;
+  font-size: 13px;
+}
+
+.opt_blog .btn_opt {
+  border: none;
+  background-color: transparent;
+  font-size: 13px;
+  color: #333;
+}
+
+.layer_opt {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: -23px;
+  min-width: 148px;
+  max-width: 222px;
+  border-radius: 1px;
+  border: 1px solid #c5cdd7;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+
+.opt_blog.opt_open .layer_opt {
+  display: block;
+}
+
+.layer_opt .list_opt {
+  padding: 11px 0;
+  list-style: none;
+}
+
+.list_opt li input:hover {
+  background: #f3f5f7;
+}
+
+.list_opt li input {
+  width: 100%;
+  text-align: left;
+  padding: 3px 24px 4px 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.info_btn {
+  display: none;
+  font-size: 0;
+}
+
+.btn_post {
+  display: inline-block;
+  width: 38px;
+  height: 23px;
+  border: 1px solid #c5cdd7;
+  font-size: 12px;
+  line-height: 1;
+  background-color: #fff;
+  text-align: center;
+  vertical-align: top;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  vertical-align: top;
+}
+
+.info_btn .btn_post {
+  width: 38px;
+  height: 23px;
+  padding: 5px 0 0;
+  margin: 0 0 0 4px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.btn_opt .ico_blog {
+  width: 10px;
+  height: 6px;
+  margin: 7px 0 0 6px;
+}
+
+.wrap_search .layer_double a,
+.wrap_search .layer_double .lab_btn {
+  height: 26px;
+  padding-left: 12px;
+  box-sizing: border-box;
+}
+
+.layer_opt a:before,
+.layer_opt .lab_btn:before {
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  margin: 8px 5px 0 8px;
+  border-radius: 3px;
+  background: transparent;
+  vertical-align: top;
+  content: "";
+}
+
+.lab_btn .btn_g {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.lab_btn:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  content: "";
+}
+
+.layer_opt .tit_opt + .list_opt {
+  padding-top: 0;
+  border: 0;
+}
+
+.lab_btn {
+  overflow: hidden;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+
+.layer_opt a,
+.layer_opt label {
+  display: block;
+  overflow: hidden;
+  padding: 7px 24px 8px 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.layer_opt a:hover,
+.layer_opt label:hover {
+  background: #f3f5f7;
+  text-decoration: none;
+}
+
+.wrap_search .layer_opt a,
+.wrap_search .layer_opt label {
+  padding: 3px 24px 4px 0;
+}
+
+.layer_opt .lab_btn {
+  float: none;
+}
+
+.tit_cont .txt_count {
+  display: inline-block;
+  margin: 7px 0 0 5px;
+  font-size: 13px;
+  color: #808080;
+  /* vertical-align: top; */
+}
+
+.list_post_type2 .post_btn .ico_blog {
+  font-size: 0;
+  line-height: 0;
+  text-align: left;
+}
+
+.info_btn .btn_opt .ico_blog {
+  top: 9px;
+  right: 11px;
+  width: 6px;
+  height: 10px;
+  background-position: -280px -110px;
+}
