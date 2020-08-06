@@ -1,0 +1,25 @@
+.bottom_paging_box {
+  position: relative;
+  margin-top: 18px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.bottom_paging_box a,
+.bottom_paging_box em,
+.bottom_paging_box span {
+  display: inline-block;
+  margin-left: 9px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bottom_paging_box em {
+  text-decoration: underline;
+  color: #d31900;
+}
+
+.bottom_paging_box a:first-child,
+.bottom_paging_box em:first-child {
+  margin-left: 0;
+}

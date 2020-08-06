@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./stylesheets/Manage.css";
 import { ManageHeader, ManageMenu, MaHome } from "../components";
 import { Footer } from "../containers";

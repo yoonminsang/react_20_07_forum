@@ -1,0 +1,91 @@
+.gnb_bar {
+  position: relative;
+  min-width: 1160px;
+  background-color: #4a56a8;
+  border: 1px solid #3c4790;
+  border-width: 1px 0 1px 0;
+}
+
+.gnb {
+  width: 1160px;
+  height: 48px;
+  margin: 0 auto;
+}
+
+.gnb_list {
+  width: 840px;
+  float: left;
+}
+
+.gnb_list li {
+  position: relative;
+  float: left;
+  margin-left: 50px;
+}
+
+.gnb_list li a {
+  color: #fff;
+  font-size: 14px;
+  line-height: 48px;
+  letter-spacing: 0.025em;
+}
+
+.gnb_list li a:hover {
+  text-decoration: underline;
+}
+
+.gnb_list li:first-child {
+  margin-left: 0;
+}
+
+.gnb_list_hover:hover .depth2 {
+  opacity: 1;
+  visibility: visible;
+}
+
+.gnb_list::after {
+  display: table;
+  clear: both;
+  table-layout: fixed;
+  content: "";
+}
+
+.transition {
+  overflow: hidden;
+  float: right;
+  width: 250px;
+  height: 48px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  line-height: 48px;
+}
+
+.depth2 {
+  position: absolute;
+  width: 104px;
+  padding: 12px 3px 10px 17px;
+  background-color: #3c4790;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s ease;
+  z-index: 100;
+}
+
+.depth2 li {
+  float: none;
+  margin-left: 0;
+}
+
+.depth2 li a {
+  display: block;
+  font-size: 12px;
+  color: #fff;
+  line-height: 24px;
+  font-weight: normal;
+}
+
+.depth2 li a.on,
+.depth2 li a:hover {
+  color: #fff200;
+}

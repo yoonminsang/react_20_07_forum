@@ -1,0 +1,93 @@
+.container.width1160 {
+  width: 1160px;
+}
+
+.left_content {
+  float: left;
+  width: 728px;
+  background: #fff;
+}
+
+.width1160 .left_content {
+  width: 840px;
+}
+
+.right_content {
+  float: right;
+  width: 300px;
+}
+
+.output_array {
+  float: right;
+  padding-top: 15px;
+}
+
+.listwrap .output_array {
+  padding-top: 11px;
+}
+
+.right_box .output_array {
+  display: table;
+  margin-left: 40px;
+}
+
+.right_box .output_array {
+  padding-top: 0;
+}
+
+.btn_whitepurple,
+.btn_lightpurple,
+.btn_lightgreen,
+.btn_yeongrey,
+.btn_white_ccc,
+.btn_yeongrey,
+.btn_blue,
+.btn_lightblue,
+.btn_grey,
+.btn_lightgrey,
+.btn_white,
+.btn_red,
+.btn_jeangrey,
+.btn_mediumgrey {
+  width: 85px;
+  height: 40px;
+  padding-right: 2px;
+  line-height: 38px;
+  margin-left: 3px;
+  border-width: 1px 1px 3px 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn_blue {
+  background: #4a57a8;
+  border-color: #3c4790;
+  text-shadow: 0px -1px #343d8e;
+  color: #fff;
+}
+
+.btn_white {
+  background: #fff;
+  border-color: #3c4790;
+  color: #3c4790;
+  margin-left: 0;
+}
+
+.view_wrap .btn_whitepurple,
+.view_wrap .btn_lightpurple,
+.view_wrap .btn_blue,
+.view_wrap .btn_grey,
+.listwrap .btn_mediumgrey,
+.view_wrap .btn_mediumgrey,
+.view_wrap .btn_white,
+.listwrap .btn_whitepurple,
+.listwrap .btn_lightpurple,
+.listwrap .btn_blue,
+.listwrap .btn_grey,
+.listwrap .btn_white {
+  width: 82px;
+  height: 35px;
+  line-height: 33px;
+}

@@ -1,0 +1,107 @@
+.gall_listwrap {
+  position: relative;
+}
+
+.gall_list {
+  width: 100%;
+  border-bottom: 1px solid #3c4790;
+}
+
+td {
+  padding: 2px 4px;
+  border-top: 1px solid #eee;
+  vertical-align: middle;
+  text-align: center;
+  color: #333;
+}
+
+th {
+  height: 37px;
+  border-width: 2px 0 1px;
+  border-style: solid;
+  border-color: #3c4790;
+  vertical-align: middle;
+  text-align: center;
+  color: #333;
+  font-weight: 550;
+}
+
+.gall_tit {
+  position: relative;
+  text-align: left;
+  font-size: 13px;
+}
+
+.gall_list td {
+  padding: 0px 4px;
+}
+
+.list .gall_list td {
+  height: 25px;
+}
+
+.gall_tit a {
+  display: inline-block;
+  max-width: 85%;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #333;
+}
+
+.list .gall_tit a {
+  padding-top: 1px;
+  line-height: 100%;
+}
+
+.list .gall_writer {
+  padding-top: 2px;
+}
+
+.list .nickname {
+  display: inline-block;
+  max-width: 64%;
+  vertical-align: top;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list .nickname em {
+  line-height: 13px;
+}
+
+.ip {
+  font-family: tahoma, sans-serif;
+  font-size: 11px;
+  color: #999;
+}
+
+.list .ip {
+  letter-spacing: -0.05em;
+  margin-left: 3px;
+}
+
+.gall_list .gall_num,
+.gall_list .gall_date,
+.gall_list .gall_count,
+.gall_list .gall_recommend {
+  font-size: 11px;
+  padding-top: 1px;
+}
+
+tr:first-child td {
+  border-top: none;
+}
+
+.gall_writer {
+  position: relative;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.reply_num {
+  font-size: 12px;
+  color: #999;
+}

@@ -14,7 +14,6 @@ const MaNotice_Items = ({
   noticeChangeState,
 }) => {
   const [itemStateMenu, setItemStateMenu] = useState(false);
-
   return (
     <>
       <li>

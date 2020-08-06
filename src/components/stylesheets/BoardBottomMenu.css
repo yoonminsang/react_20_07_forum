@@ -1,0 +1,19 @@
+.list_bottom_btnbox,
+.view_bottom_btnbox {
+  margin-top: 12px;
+}
+
+.list_bottom_btnbox > div > button:first-child {
+  margin-left: 0;
+}
+
+.list_bottom_btnbox > div > button {
+  margin-left: 3px;
+}
+
+.list_bottom_btnbox:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  content: "";
+}

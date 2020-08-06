@@ -17,7 +17,7 @@ const MaNotice = () => {
   const changeChildChecked = (e) => {
     setItems(
       items.map((item) =>
-        item.id == e.target.value
+        item.id === e.target.value * 1
           ? { ...item, checked: e.target.checked }
           : item
       )
@@ -215,7 +215,9 @@ const MaNotice = () => {
                 ))}
             </ul>
           </div>
-          <MaNotice_Paging itemsCounting={itemsCounting}></MaNotice_Paging>
+          {itemsCounting > 0 && (
+            <MaNotice_Paging itemsCounting={itemsCounting}></MaNotice_Paging>
+          )}
         </>
       )}
     </>

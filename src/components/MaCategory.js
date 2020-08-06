@@ -8,6 +8,7 @@ import {
 } from "../components2";
 
 const MaCategory = () => {
+  const [loading, setLoading] = useState(true);
   const [originItems, setOriginItems] = useState(null);
   const [items, setItems] = useState(null);
   const [subject, setSubject] = useState(null);
@@ -23,6 +24,7 @@ const MaCategory = () => {
         setOriginItems(res.data.category);
         setItems(res.data.category);
         setSubject(res.data.subject);
+        setLoading(false);
       })
       .catch(function (err) {
         console.log(err);
@@ -39,19 +41,10 @@ const MaCategory = () => {
 
   const categoryConfirm = (category_name, subject_id, subject_name) => (e) => {
     e.preventDefault();
-    setItems(
-      [
-        ...items,
-        { id: 0, category_name, subject_id, subject_name, counting: 0 },
-      ]
-      // items.concat({
-      //   id: 0,
-      //   category_name,
-      //   subject_id,
-      //   subject_name,
-      //   counting: 0,
-      // })
-    );
+    setItems([
+      ...items,
+      { id: 0, category_name, subject_id, subject_name, counting: 0 },
+    ]);
     setItemAdd(false);
   };
 
@@ -140,77 +133,83 @@ const MaCategory = () => {
 
   return (
     <>
-      <h3 className="tit_cont">카테고리 관리</h3>
-      <div className="wrap_set">
-        <strong className="st_desc">변경사항 저장을 눌러야 저장됩니다.</strong>
-        <p className="desc">주제 연결을 설정할 수 있습니다.</p>
-        <div className="set_order">
-          <div className="list_order">
-            <div className="bundle_item">
-              <div className="item_order">
-                <div className="basic_item">
-                  <div className="wrap_drag wrap_all">
-                    <span className="ico_blog ico_drag ico_all"></span>
+      {loading === false && (
+        <>
+          <h3 className="tit_cont">카테고리 관리</h3>
+          <div className="wrap_set">
+            <strong className="st_desc">
+              변경사항 저장을 눌러야 저장됩니다.
+            </strong>
+            <p className="desc">주제 연결을 설정할 수 있습니다.</p>
+            <div className="set_order">
+              <div className="list_order">
+                <div className="bundle_item">
+                  <div className="item_order">
+                    <div className="basic_item">
+                      <div className="wrap_drag wrap_all">
+                        <span className="ico_blog ico_drag ico_all"></span>
+                      </div>
+                      <span className="txt_name">전체 카테고리</span>
+                    </div>
                   </div>
-                  <span className="txt_name">전체 카테고리</span>
                 </div>
+
+                {items !== null &&
+                  items.map((item, index) =>
+                    itemModify !== index ? (
+                      <MaCategory_Items
+                        id={item.id}
+                        index={index}
+                        category_name={item.category_name}
+                        subject_id={item.subject_id}
+                        subject_name={item.subject_name}
+                        counting={item.counting}
+                        key={index}
+                        categoryModify={categoryModify}
+                        categoryDelete={categoryDelete}
+                      />
+                    ) : (
+                      <MaCategory_ModifyItem
+                        id={item.id}
+                        index={index}
+                        category_name={item.category_name}
+                        subject_id={item.subject_id}
+                        subject_name={item.subject_name}
+                        key={index}
+                        allSubject={subject}
+                        categoryMConfirm={categoryMConfirm}
+                        categoryMCancl={categoryMCancle}
+                      />
+                    )
+                  )}
+
+                {itemAdd === true && (
+                  <MaCategory_AddItem
+                    allSubject={subject}
+                    categoryCancle={categoryCancle}
+                    categoryConfirm={categoryConfirm}
+                  ></MaCategory_AddItem>
+                )}
               </div>
+              <button className="btn_wrap_add" onClick={categoryAdd}>
+                카테고리 추가
+              </button>
             </div>
 
-            {items !== null &&
-              items.map((item, index) =>
-                itemModify !== index ? (
-                  <MaCategory_Items
-                    id={item.id}
-                    index={index}
-                    category_name={item.category_name}
-                    subject_id={item.subject_id}
-                    subject_name={item.subject_name}
-                    counting={item.counting}
-                    key={index}
-                    categoryModify={categoryModify}
-                    categoryDelete={categoryDelete}
-                  />
-                ) : (
-                  <MaCategory_ModifyItem
-                    id={item.id}
-                    index={index}
-                    category_name={item.category_name}
-                    subject_id={item.subject_id}
-                    subject_name={item.subject_name}
-                    key={index}
-                    allSubject={subject}
-                    categoryMConfirm={categoryMConfirm}
-                    categoryMCancl={categoryMCancle}
-                  />
-                )
+            <div className="set_btn">
+              {JSON.stringify(originItems) === JSON.stringify(items) ? (
+                <button className="btn_save btn_off" disabled>
+                  변경사항 저장
+                </button>
+              ) : (
+                <button className="btn_save" onClick={categorySave}>
+                  변경사항 저장
+                </button>
               )}
-
-            {itemAdd === true && (
-              <MaCategory_AddItem
-                allSubject={subject}
-                categoryCancle={categoryCancle}
-                categoryConfirm={categoryConfirm}
-              ></MaCategory_AddItem>
-            )}
+            </div>
           </div>
-          <button className="btn_wrap_add" onClick={categoryAdd}>
-            카테고리 추가
-          </button>
-        </div>
-
-        <div className="set_btn">
-          {JSON.stringify(originItems) === JSON.stringify(items) ? (
-            <button className="btn_save btn_off" disabled>
-              변경사항 저장
-            </button>
-          ) : (
-            <button className="btn_save" onClick={categorySave}>
-              변경사항 저장
-            </button>
-          )}
-        </div>
-      </div>
+        </>
+      )}
     </>
   );
 };

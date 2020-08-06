@@ -1,7 +1,14 @@
 export { default as Header } from "./Header";
+export { default as Menu } from "./Menu";
 export { default as Footer } from "./Footer";
 export { default as AuSignIn } from "./AuSignIn";
 export { default as AuSignUp } from "./AuSignUp";
+export { default as BoardTitle } from "./BoardTitle";
+export { default as BoardMenu } from "./BoardMenu";
+export { default as BoardList } from "./BoardList";
+export { default as BoardBottomMenu } from "./BoardBottomMenu";
+export { default as BoardPaging } from "./BoardPaging";
+export { default as BoardSearch } from "./BoardSearch";
 export { default as ManageHeader } from "./ManageHeader";
 export { default as ManageMenu } from "./ManageMenu";
 export { default as MaHome } from "./MaHome";

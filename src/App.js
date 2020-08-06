@@ -5,6 +5,8 @@ import {
   AuthSignIn,
   AuthSignUp,
   Home,
+  AllForum,
+  Forum,
   ManageHome,
   ManageCategory,
   ManageNotice,
@@ -29,7 +31,16 @@ const App = ({ autoSignIn }) => {
     <BrowserRouter>
       <Switch>
         <Route
+          path="/manage/notice/search/type/:type/Keyword/:Keyword/page/:pageId"
+          component={ManageNotice}
+        />
+        <Route
           path="/manage/notice/search/type/:type/Keyword/:Keyword"
+          component={ManageNotice}
+        />
+        <Route
+          exact
+          path="/manage/notice/page/:pageId"
           component={ManageNotice}
         />
         <Route exact path="/manage/notice" component={ManageNotice} />
@@ -37,6 +48,9 @@ const App = ({ autoSignIn }) => {
         <Route exact path="/manage" component={ManageHome} />
         <Route exact path="/auth/signup" component={AuthSignUp} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
+        <Route path="/forum/:category/page/:pageId" component={Forum} />
+        <Route path="/forum/:category" component={Forum} />
+        <Route exact path="/forum" component={AllForum} />
         <Route exact path="/" component={Home} />
       </Switch>
     </BrowserRouter>

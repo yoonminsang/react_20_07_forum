@@ -68,3 +68,62 @@ button {
 button:disabled {
   cursor: no-drop;
 }
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.blind {
+  position: absolute;
+  overflow: hidden;
+  visibility: hidden;
+  margin: -1px;
+  width: 0px;
+  height: 0px;
+  top: -9999px;
+  font-size: 0;
+}
+
+.sp_img {
+  background-image: url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);
+  background-repeat: no-repeat;
+}
+
+.clear:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  content: "";
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+caption {
+  position: relative;
+  width: 0px;
+  height: 0px;
+  font-size: 0;
+  line-height: 0;
+  z-index: -1;
+}
+
+em {
+  font-style: normal;
+}
+
+html {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
