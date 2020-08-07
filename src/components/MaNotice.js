@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./stylesheets/MaNotice.css";
-import { Link, useLocation, useRouteMatch } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
 import { MaNotice_Menu, MaNotice_Items, MaNotice_Paging } from "../components2";
 
 const MaNotice = () => {
   const location = useLocation();
-  const match = useRouteMatch();
+  const params = useParams();
   const [loading, setLoading] = useState(true);
   const [allChecked, setAllChecked] = useState(false);
   const changeAllChecked = (e) => {
@@ -171,14 +171,13 @@ const MaNotice = () => {
     <>
       {loading === false && (
         <>
-          {match.params.Keyword === undefined ? (
+          {params.Keyword === undefined ? (
             <h3 className="tit_cont">
               공지 관리<span className="txt_count">{itemsCounting}</span>
             </h3>
           ) : (
             <h3 className="tit_cont">
-              <span className="txt_result">'{match.params.Keyword}'</span> 검색
-              결과
+              <span className="txt_result">'{params.Keyword}'</span> 검색 결과
               <span className="txt_count">{itemsCounting}</span>
               <Link to="/manage/notice" className="link_back" onClick={refresh}>
                 <span className="ico_blog ico_back">검색 전으로 돌아가기</span>

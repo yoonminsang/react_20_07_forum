@@ -48,6 +48,7 @@ const App = ({ autoSignIn }) => {
         <Route exact path="/manage" component={ManageHome} />
         <Route exact path="/auth/signup" component={AuthSignUp} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
+        <Route path="/forum/:category/mode/:modeType" component={Forum} />
         <Route path="/forum/:category/page/:pageId" component={Forum} />
         <Route path="/forum/:category" component={Forum} />
         <Route exact path="/forum" component={AllForum} />

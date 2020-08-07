@@ -17,14 +17,18 @@ import { Link, useLocation } from "react-router-dom";
 const Forum = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
-  const [category, setCategory] = useState(null);
+  const [title, setTitle] = useState(null);
+  const [counting, setCounting] = useState(0);
+  // const [category, setCategory] = useState(null);
   const [categoryPost, setCategoryPost] = useState(null);
   useEffect(() => {
     setLoading(true);
     axios
       .get(location.pathname)
       .then(function (res) {
-        setCategory(res.data.category);
+        // setCategory(res.data.category);
+        setTitle(res.data.title);
+        setCounting(res.data.counting);
         setCategoryPost(res.data.categoryPost);
         setLoading(false);
       })
@@ -47,11 +51,11 @@ const Forum = () => {
         {loading === false && (
           <div className="container width1160 listwrap clear">
             <section className="left_content">
-              <BoardTitle title={category[0].name}></BoardTitle>
+              <BoardTitle title={title}></BoardTitle>
               <BoardMenu changePost={changePost}></BoardMenu>
               <BoardList categoryPost={categoryPost}></BoardList>
               <BoardBottomMenu changePost={changePost}></BoardBottomMenu>
-              <BoardPaging counting={category[0].counting}></BoardPaging>
+              <BoardPaging counting={counting}></BoardPaging>
               <BoardSearch></BoardSearch>
             </section>
             <section className="right_content">

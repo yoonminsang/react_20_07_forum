@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Link, useLocation, useRouteMatch, matchPath } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 const MaNotice_Paging = ({ itemsCounting }) => {
   const location = useLocation();
-  const match = useRouteMatch();
-  const pageId = match.params.pageId;
+  const params = useParams();
+  const pageId = params.pageId;
   let startIndex;
   let pagination = [];
   let prev, next;
@@ -33,7 +33,7 @@ const MaNotice_Paging = ({ itemsCounting }) => {
           <span className="ico_blog ico_next"></span>
         </a>
       );
-  } else if (match.params.Keyword === undefined) {
+  } else if (params.Keyword === undefined) {
     startIndex = 10 * Math.floor((pageId - 1) / 10) + 1;
     for (
       let i = startIndex;
@@ -84,7 +84,7 @@ const MaNotice_Paging = ({ itemsCounting }) => {
       pagination.push(
         <li className={i == pageId ? "on" : undefined} key={i}>
           <Link
-            to={`/manage/notice/search/type/${match.params.type}/Keyword/${match.params.Keyword}/page/${i}`}
+            to={`/manage/notice/search/type/${params.type}/Keyword/${params.Keyword}/page/${i}`}
             className="link_num"
           >
             {i}
@@ -95,8 +95,8 @@ const MaNotice_Paging = ({ itemsCounting }) => {
     prev =
       pageId > 10 ? (
         <Link
-          to={`/manage/notice/search/type/${match.params.type}/Keyword/${
-            match.params.Keyword
+          to={`/manage/notice/search/type/${params.type}/Keyword/${
+            params.Keyword
           }/page/${startIndex - 10}`}
           className="link_paging"
         >
@@ -110,8 +110,8 @@ const MaNotice_Paging = ({ itemsCounting }) => {
     next =
       Math.ceil(itemsCounting / 15) > startIndex + 9 ? (
         <Link
-          to={`/manage/notice/search/type/${match.params.type}/Keyword/${
-            match.params.Keyword
+          to={`/manage/notice/search/type/${params.type}/Keyword/${
+            params.Keyword
           }/page/${startIndex + 10}`}
           className="link_paging"
         >

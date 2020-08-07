@@ -1,18 +1,18 @@
 import React from "react";
-import { Link, useRouteMatch } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./stylesheets/BoardPaging.css";
 
 const BoardPaging = ({ counting }) => {
-  const match = useRouteMatch();
+  const params = useParams();
   let pageId;
-  if (match.params.pageId) {
-    pageId = match.params.pageId;
+  if (params.pageId) {
+    pageId = params.pageId;
   } else {
     pageId = 1;
   }
-  const category = match.params.category;
-  const searchType = match.params.searchType;
-  const modeType = match.params.modeType;
+  const category = params.category;
+  const searchType = params.searchType;
+  const modeType = params.modeType;
   const endCounting = Math.ceil(counting / 50);
   const prevCounting = 1 + 15 * (Math.ceil(pageId / 15) - 2);
   const nextCounting = 1 + 15 * Math.ceil(pageId / 15);
