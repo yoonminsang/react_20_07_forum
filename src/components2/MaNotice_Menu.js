@@ -130,6 +130,7 @@ const MaNotice_Items = ({
               disabled={search.value.length === 0 ? true : false}
               onClick={(e) => {
                 e.preventDefault();
+                setSearchStateMenu(false);
                 history.push(
                   `/manage/notice/search/type/${searchState}/Keyword/${search.value}`
                 );

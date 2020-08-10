@@ -1,0 +1,234 @@
+.view_content_wrap {
+  font-size: 13px;
+  color: #333;
+}
+
+.gallview_head {
+  margin: 16px 0 29px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #eee;
+}
+
+.gallview_head .title {
+  padding: 0 2px;
+  margin-bottom: 9px;
+  font-size: 14px;
+}
+
+.gall_writer {
+  position: relative;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.gallview_head .gall_writer {
+  padding: 0 2px;
+}
+
+.nickname.in em {
+  font-style: normal;
+}
+
+.writer_nikcon img {
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+.gallview_head .gall_date::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+  margin: 0 10px 0 6px;
+  vertical-align: -2px;
+}
+
+.gallview_head .gall_writer > .fr {
+  padding-right: 7px;
+}
+
+/* .gallview_head .gall_writer .fr > span::before,
+.album_head .gall_writer .fr > span::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+  margin: 0 10px 0 6px;
+  vertical-align: -2px;
+} */
+
+.gall_writer.ub-writer .fr span::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px;
+  background: #ccc;
+  margin: 0 10px 0 6px;
+  vertical-align: -2px;
+}
+
+.gall_writer.ub-writer .fr :first-child::before {
+  content: none;
+}
+
+.gallview_contents {
+  line-height: 22px;
+}
+
+.gallview_contents > .inner {
+  margin-bottom: 50px;
+}
+
+.writing_view_box {
+  float: left;
+  max-width: 900px;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+.writing_view_box {
+  position: relative !important;
+  overflow: hidden;
+}
+
+.btn_recommend_box {
+  width: 288px;
+  height: auto;
+  margin: 0 auto 36px;
+  padding-top: 19px;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  background: #fff;
+}
+
+.btn_recommend_box .inner {
+  overflow: hidden;
+  width: 139px;
+  margin-bottom: 13px;
+  padding: 0;
+}
+
+.up_num_box,
+.down_num_box {
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.up_num_box {
+  float: left;
+  width: 64px;
+  padding: 17px 0 0 0px;
+}
+
+.btn_recom_up {
+  float: right;
+  width: 56px;
+  outline: none;
+}
+
+.icon_recom_up,
+.icon_recom_down {
+  display: inline-block;
+  width: 56px;
+  height: 56px;
+}
+
+.icon_recom_up {
+  background-position: 0 -315px;
+}
+
+.font_red {
+  color: #d31900;
+}
+
+.btn_recom_down {
+  float: left;
+  width: 56px;
+  outline: none;
+}
+
+.icon_recom_down {
+  background-position: 0 -377px;
+}
+
+.down_num_box {
+  float: right;
+  width: 64px;
+  padding: 17px 12px 0 0;
+}
+
+.recom_bottom_box {
+  clear: both;
+  position: relative;
+  height: 37px;
+  border-top: 1px solid #c4c4c4;
+}
+
+.btn_hitgall,
+.btn_snsmore,
+.btn_report {
+  display: block;
+  float: left;
+  width: 94px;
+  height: 37px;
+  margin-left: 1px;
+  border-right: 1px solid #c4c4c4;
+  background: #f9f9f9;
+  font-size: 12px;
+  color: #555;
+  text-shadow: 0px 1px #fff;
+}
+
+.btn_hitgall {
+  margin-left: 0;
+}
+
+.icon_hitgall,
+.icon_snsmore,
+.icon_report {
+  display: inline-block;
+}
+
+.icon_hitgall {
+  width: 23px;
+  height: 20px;
+  background-position: -74px -284px;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+
+.btn_snsmore {
+  width: 96px;
+}
+
+.icon_snsmore {
+  width: 17px;
+  height: 20px;
+  background-position: -74px -262px;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+
+.btn_report {
+  border-right: 0;
+}
+
+.icon_report {
+  width: 18px;
+  height: 20px;
+  background-position: -74px -241px;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+
+.gallview_contents .ql-container.ql-snow {
+  border: none;
+}
+
+.gallview_contents .ql-container {
+  min-height: none;
+}

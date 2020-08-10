@@ -75,6 +75,13 @@
   margin-left: 0;
 }
 
+.btn_grey {
+  background: #666;
+  border-color: #444;
+  text-shadow: 0px -1px #474747;
+  color: #fff;
+}
+
 .view_wrap .btn_whitepurple,
 .view_wrap .btn_lightpurple,
 .view_wrap .btn_blue,

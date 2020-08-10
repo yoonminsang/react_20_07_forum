@@ -17,6 +17,7 @@
 .bottom_paging_box em {
   text-decoration: underline;
   color: #d31900;
+  font-style: normal;
 }
 
 .bottom_paging_box a:first-child,

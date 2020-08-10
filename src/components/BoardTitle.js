@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import "./stylesheets/BoardTitle.css";
 
 const BoardTitle = ({ title }) => {
   const params = useParams();
+  useEffect(() => {
+    title !== null && (document.title = `M's forum ${title} 포럼`);
+  }, []);
   return (
     <>
       <header>

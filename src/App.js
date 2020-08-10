@@ -7,10 +7,13 @@ import {
   Home,
   AllForum,
   Forum,
+  ForumPost,
+  // Write,
   ManageHome,
   ManageCategory,
   ManageNotice,
 } from "./routes";
+import { Write } from "./containers";
 import axios from "axios";
 
 const App = ({ autoSignIn }) => {
@@ -48,8 +51,14 @@ const App = ({ autoSignIn }) => {
         <Route exact path="/manage" component={ManageHome} />
         <Route exact path="/auth/signup" component={AuthSignUp} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
+        <Route exact path="/auth/signin" component={AuthSignIn} />
         <Route path="/forum/:category/mode/:modeType" component={Forum} />
+        <Route
+          path="/forum/:category/page/:pageId/:postId"
+          component={ForumPost}
+        />
         <Route path="/forum/:category/page/:pageId" component={Forum} />
+        <Route path="/forum/:category/write" component={Write} />
         <Route path="/forum/:category" component={Forum} />
         <Route exact path="/forum" component={AllForum} />
         <Route exact path="/" component={Home} />

@@ -1,0 +1,134 @@
+.comment_wrap {
+  overflow: hidden;
+  width: 100%;
+  height: 38px;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #333;
+}
+
+.comment_wrap.show,
+.gall_listwrap.album .comment_wrap.show,
+.comment_box .reply.show {
+  overflow: visible;
+  height: 100%;
+}
+
+.comment_count {
+  height: 38px;
+  line-height: 38px;
+  font-weight: bold;
+}
+
+.comment_count .num_box {
+  width: 50%;
+}
+
+.view_comment em {
+  font-style: normal;
+}
+
+.comment_count:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  content: "";
+}
+
+.comment_box {
+  position: relative;
+  border-top: 2px solid #525eaa;
+}
+
+.cmt_info {
+  position: relative;
+  padding: 9px 12px 7px;
+  border-top: 1px solid #eee;
+}
+
+.view_comment .cmt_info {
+  padding: 9px 3px 7px 3px;
+}
+
+.cmt_list li:first-child .cmt_info {
+  border-top: none;
+}
+
+.cmt_nickbox {
+  float: left;
+  width: 132px;
+  margin-right: 33px;
+  margin-top: 3px;
+}
+
+.gall_writer {
+  position: relative;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.comment_box .nickname {
+  font-size: 12px;
+  color: #777;
+  vertical-align: top;
+}
+
+.comment_box .nickname > em {
+  display: inline-block;
+  max-width: 84px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+.cmt_txtbox {
+  float: left;
+}
+
+.cmt_mdf_del {
+  position: relative;
+  margin-left: 6px;
+  z-index: 1;
+}
+
+.cmt_mdf_del {
+  float: right;
+}
+
+.view_comment .cmt_mdf_del {
+  top: 3px;
+}
+
+.btn_cmt_delete {
+  background: url(https://nstatic.dcinside.com/dc/w/images/sp/sp_img.png);
+  background-position: -268px -200px;
+  font-size: 0;
+  line-height: 0;
+  width: 13px;
+  height: 13px;
+  vertical-align: top;
+}
+
+.cmt_mdf_del button {
+  color: #999;
+}
+
+.bottom_paging_box {
+  position: relative;
+  margin-top: 18px;
+  text-align: center;
+  line-height: 20px;
+}
+
+.comment_wrap .bottom_paging_box {
+  border-top: 1px #eee solid;
+}
+
+.comment_box .bottom_paging_box {
+  margin-top: 0;
+}
+
+.view_comment .bottom_paging_box {
+  height: 69px;
+}

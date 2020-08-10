@@ -1,0 +1,164 @@
+.buttom_search_wrap {
+  width: 451px;
+  margin: 20px auto 0;
+}
+
+.select_box {
+  position: relative;
+  float: left;
+}
+
+.bottom_array {
+  box-sizing: content-box;
+  width: 123px;
+  height: 36px;
+  border: 1px solid #3c4790;
+  background: #4a57a8;
+}
+
+.select_area {
+  position: relative;
+  cursor: pointer;
+}
+
+.bottom_array .select_area {
+  display: block;
+  width: 117px;
+  height: 30px;
+  padding-left: 8px;
+  line-height: 30px;
+  margin: 3px 0 0 3px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #3c4790;
+}
+
+.bottom_array .select_area .inner {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 34px;
+  height: 30px;
+  background-color: #4a57a8;
+}
+
+.icon_option_more {
+  display: inline-block;
+  position: absolute;
+}
+
+.bottom_array .icon_option_more {
+  position: static;
+  width: 15px;
+  height: 9px;
+  margin: 10px 0 0 10px;
+  background-position: -150px -42px;
+}
+
+.option_box {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f3f3f3;
+  border: 1px #ccc solid;
+  padding: 6px 5px 4px;
+  z-index: 20;
+}
+
+.bottom_array .option_box {
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.bottom_array .option_box {
+  width: 103px;
+  box-sizing: content-box;
+  padding: 6px 9px 5px;
+  border: 2px solid #3c4790;
+  line-height: 21px;
+  font-size: 14px;
+  color: #3c4790;
+  left: -1px;
+  top: 36px;
+}
+
+.option_box li {
+  line-height: 16px;
+  font-size: 11px;
+  color: #555;
+  font-weight: normal;
+}
+
+.bottom_array .option_box li {
+  line-height: 21px;
+  font-size: 14px;
+  color: #3c4790;
+  cursor: pointer;
+}
+
+.bottom_array .option_box li:hover {
+  text-decoration: underline;
+}
+
+.bottom_search {
+  height: 36px;
+  margin-left: 5px;
+  border: 1px solid #3c4790;
+  background: #4a57a8;
+}
+
+.inner_search {
+  float: left;
+  width: 354px;
+  background: #fff;
+  margin: 5px 0 0 5px;
+}
+
+.bottom_search .inner_search {
+  width: 278px;
+}
+
+.bottom_search .inner_search {
+  margin: 3px 0 0 3px;
+}
+
+.in_keyword {
+  width: 336px;
+  height: 34px;
+  padding: 0 9px;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.bnt_search {
+  float: left;
+  width: 45px;
+  height: 44px;
+  background-position: 0 -89px;
+}
+
+.bottom_search .bnt_search {
+  width: 37px;
+  height: 36px;
+  background-position: 0 -195px;
+}
+
+.container.width1160.listwrap.clear .bottom_search.fl.clear {
+  box-sizing: content-box;
+}
+
+.bottom_search .in_keyword {
+  width: 260px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.board_search {
+  margin-bottom: 50px;
+}

@@ -12,21 +12,19 @@ import {
   BoardPaging,
   BoardSearch,
 } from "../components";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Forum = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const [title, setTitle] = useState(null);
   const [counting, setCounting] = useState(0);
-  // const [category, setCategory] = useState(null);
   const [categoryPost, setCategoryPost] = useState(null);
   useEffect(() => {
     setLoading(true);
     axios
       .get(location.pathname)
       .then(function (res) {
-        // setCategory(res.data.category);
         setTitle(res.data.title);
         setCounting(res.data.counting);
         setCategoryPost(res.data.categoryPost);
@@ -35,13 +33,8 @@ const Forum = () => {
       .catch(function (err) {
         console.log(err);
       });
-    document.title = "M's forum 포럼";
     window.scrollTo(0, 0);
   }, [location.pathname]);
-  const changePost = (value) => () => {
-    console.log(value);
-    //아직 안한거야  밑에 바텀메뉴도 마찬가지
-  };
 
   return (
     <>
@@ -49,12 +42,12 @@ const Forum = () => {
       <Menu></Menu>
       <>
         {loading === false && (
-          <div className="container width1160 listwrap clear">
+          <main className="container width1160 listwrap clear">
             <section className="left_content">
               <BoardTitle title={title}></BoardTitle>
-              <BoardMenu changePost={changePost}></BoardMenu>
+              <BoardMenu></BoardMenu>
               <BoardList categoryPost={categoryPost}></BoardList>
-              <BoardBottomMenu changePost={changePost}></BoardBottomMenu>
+              <BoardBottomMenu></BoardBottomMenu>
               <BoardPaging counting={counting}></BoardPaging>
               <BoardSearch></BoardSearch>
             </section>
@@ -64,7 +57,7 @@ const Forum = () => {
                 채워넣자여기는 나중에 api같은거 채워넣자
               </div>
             </section>
-          </div>
+          </main>
         )}
       </>
       <Footer></Footer>

@@ -33,6 +33,7 @@ button,
 select {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
 button,
@@ -117,10 +118,6 @@ caption {
   font-size: 0;
   line-height: 0;
   z-index: -1;
-}
-
-em {
-  font-style: normal;
 }
 
 html {

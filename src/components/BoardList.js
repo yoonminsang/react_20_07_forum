@@ -32,7 +32,6 @@ const BoardList = ({ categoryPost }) => {
         >
           <caption>포럼 리스트</caption>
           <colgroup>
-            {/* <col style={{ width: "7%" }}></col> */}
             <col></col>
             <col style={{ width: "18%" }}></col>
             <col style={{ width: "6%" }}></col>
@@ -53,12 +52,15 @@ const BoardList = ({ categoryPost }) => {
             {categoryPost !== null &&
               categoryPost.map((post, index) => (
                 <tr className="ub-content us-post" key={index}>
-                  {/* <td className="gall_num">{post.id}</td> */}
-                  <td className="gall_tit ub-word">
-                    <Link to={`${link}/${post.id}`}>
-                      {post.title}
-                      <span className="reply_num"> [{post.comment}]</span>
-                    </Link>
+                  <td
+                    className={
+                      post.id == params.postId
+                        ? "gall_tit ub-word selected"
+                        : "gall_tit ub-word"
+                    }
+                  >
+                    <Link to={`${link}/${post.id}`}>{post.title} </Link>
+                    <span className="reply_num"> [{post.comment}]</span>
                   </td>
                   <td className="gall_writer ub-writer">
                     <span className="nickname">
