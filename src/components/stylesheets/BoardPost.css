@@ -232,3 +232,10 @@
 .gallview_contents .ql-container {
   min-height: none;
 }
+
+.gallview_head .gall_date,
+.gallview_head .gall_count,
+.gallview_head .gall_reply_num,
+.gallview_head .gall_comment {
+  cursor: default;
+}

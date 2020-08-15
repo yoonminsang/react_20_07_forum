@@ -1,0 +1,61 @@
+.headbox {
+  height: 40px;
+  background: #fff;
+}
+
+.dchead {
+  position: relative;
+  width: 1050px;
+  height: 105px;
+  margin: 0 auto;
+}
+
+.gallog_wrap.width1160 .dchead {
+  width: 1050px;
+  height: 28px;
+  padding-top: 12px;
+}
+
+.dcmain_go {
+  padding-left: 2px;
+  font-size: 11px;
+  color: #d31900;
+}
+
+.icon_dcmain_go {
+  display: inline-block;
+  width: 5px;
+  height: 9px;
+  background-position: -186px -231px;
+  margin-left: 3px;
+}
+
+.gallog_wrap .area_links {
+  top: 10px;
+}
+
+.area_links ul {
+  overflow: hidden;
+  line-height: 19px;
+}
+
+.area_links li {
+  float: left;
+}
+
+.area_links a {
+  font-size: 11px;
+  color: #555;
+}
+
+.area_links li::before {
+  content: "|";
+  color: #ccc;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 0 3px 0 5px;
+}
+
+.area_links li:first-child::before {
+  content: none;
+}

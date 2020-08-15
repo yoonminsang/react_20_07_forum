@@ -4,21 +4,22 @@ import "./stylesheets/Menu.css";
 import axios from "axios";
 
 const Menu = () => {
-  const [subject, setSubject] = useState(null);
-  useEffect(() => {
-    axios
-      .get("/manage/category")
-      .then(function (res) {
-        setSubject(res.data.subject);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  }, []);
+  // const [subject, setSubject] = useState(null);
+  // useEffect(() => {
+  //   axios
+  //     .get("/manage/category")
+  //     .then(function (res) {
+  //       setSubject(res.data.subject);
+  //     })
+  //     .catch(function (err) {
+  //       console.log(err);
+  //     });
+  // }, []);
   const [transition, setTransition] = useState(true);
   const changeTransition = () => {
     transition === true ? setTransition(false) : setTransition(true);
   };
+
   useEffect(() => {
     const interval = setInterval(changeTransition, 2000);
     return () => {
@@ -45,13 +46,13 @@ const Menu = () => {
               </div> */}
             </li>
             <li>
-              <Link to="/info/post">내가 쓴 글</Link>
+              <Link to="/info">갤로그</Link>
             </li>
             <li>
-              <Link to="/info/comment">내가 쓴 댓글</Link>
+              <Link to="/popular">인기글</Link>
             </li>
             <li>
-              <Link to="/forum/popular">인기글</Link>
+              <Link to="/notice">공지글</Link>
             </li>
           </ul>
           <div className="transition">

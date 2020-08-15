@@ -1,0 +1,11 @@
+.view_bottom_btnbox {
+  padding-bottom: 20px;
+}
+
+.view_bottom_btnbox .fl button {
+  margin-left: 3px;
+}
+
+.view_bottom_btnbox .fl button:first-child {
+  margin-left: 0px;
+}

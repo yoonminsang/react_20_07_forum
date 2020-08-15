@@ -1,0 +1,83 @@
+.cont_box {
+  clear: both;
+}
+
+.cont_listbox {
+  border: 1px #3c4790 solid;
+  border-width: 2px 0 1px 0;
+}
+
+.cont {
+  float: left;
+  font-size: 13px;
+  color: #555;
+}
+
+.cont_listbox li {
+  overflow: hidden;
+  min-height: 75px;
+  border-top: 1px #ddd solid;
+}
+
+.cont_listbox li:first-child {
+  border-top: none;
+}
+
+.cont.box1 {
+  width: 22%;
+}
+
+.cont.box2 {
+  width: 58%;
+}
+
+.cont.box3 {
+  width: 20%;
+  text-align: center;
+}
+
+.cont > a,
+.cont .info,
+.cont > .txt {
+  /* overflow: hidden;
+  display: block;
+  max-height: 60px;
+  line-height: 20px;
+  margin: 17px 0 18px;
+  word-break: break-all;
+  word-wrap: break-word; */
+  display: -webkit-box;
+  max-height: 60px;
+  line-height: 20px;
+  -webkit-line-clamp: 3;
+  margin: 17px 0 18px;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.cont.box1 > a {
+  padding: 0 1px 0 15px;
+}
+
+.cont.box2 > a,
+.cont.box2 > p,
+.cont > .txt,
+.gallog_wrap .comment_dccon,
+.gallog_wrap .uservoice {
+  padding: 0 27px 0 32px;
+}
+
+.cont .info {
+  padding: 0 15px 0 0px;
+}
+
+.cont .gall_name,
+.cont .date {
+  display: block;
+}
+
+.cont .gall_name {
+  font-weight: bold;
+}

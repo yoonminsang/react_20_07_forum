@@ -30,7 +30,7 @@ const BoardPaging = ({ counting }) => {
       } else {
         list.push(
           <Link
-            to={`/forum/${category}/search/${searchType}/page/${i}`}
+            to={`/forum/${category}/search/${searchType}/Keyword/${params.Keyword}/page/${i}`}
             key={i}
           >
             {i}
@@ -38,19 +38,31 @@ const BoardPaging = ({ counting }) => {
         );
       }
     }
-    first = <Link to={`/forum/${category}/search/${searchType}`}>처음</Link>;
+    first = (
+      <Link
+        to={`/forum/${category}/search/${searchType}/Keyword/${params.Keyword}`}
+      >
+        처음
+      </Link>
+    );
     end = (
-      <Link to={`/forum/${category}/search/${searchType}/page/${endCounting}`}>
+      <Link
+        to={`/forum/${category}/search/${searchType}/Keyword/${params.Keyword}/page/${endCounting}`}
+      >
         끝
       </Link>
     );
     prev = (
-      <Link to={`/forum/${category}/search/${searchType}/page/${prevCounting}`}>
+      <Link
+        to={`/forum/${category}/search/${searchType}/Keyword/${params.Keyword}/page/${prevCounting}`}
+      >
         이전
       </Link>
     );
     next = (
-      <Link to={`/forum/${category}/search/${searchType}/page/${nextCounting}`}>
+      <Link
+        to={`/forum/${category}/search/${searchType}/Keyword/${params.Keyword}/page/${nextCounting}`}
+      >
         다음
       </Link>
     );

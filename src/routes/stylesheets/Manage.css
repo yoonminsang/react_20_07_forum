@@ -2,6 +2,10 @@
   background: #f3f5f7;
 }
 
+.mManage * {
+  box-sizing: border-box;
+}
+
 .mManage .mContent {
   position: relative;
   width: 1150px;

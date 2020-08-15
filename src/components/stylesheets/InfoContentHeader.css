@@ -1,0 +1,40 @@
+.cont_head {
+  height: 32px;
+  vertical-align: top;
+  border-bottom: 2px solid #3c4790;
+}
+
+.gallog_wrap .cont_head {
+  border-bottom: none;
+}
+
+.cont_head .tit {
+  float: left;
+  padding-top: 2px;
+  color: #d31900;
+  font-size: 14px;
+}
+
+.cont_head .tit::before {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 3px;
+  background: #d31900;
+  vertical-align: 5px;
+  margin: 0 6px 0 4px;
+}
+
+.btn_blue.smallest.go {
+  display: block;
+  float: right;
+  width: 60px;
+  height: 18px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.cont_head .tit .num {
+  padding-left: 3px;
+  font-weight: normal;
+}

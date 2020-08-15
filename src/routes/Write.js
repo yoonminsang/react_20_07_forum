@@ -11,25 +11,32 @@ import { useLocation, useHistory, useParams } from "react-router-dom";
 import "./stylesheets/Write.css";
 import { useInput } from "../hooks";
 
-const Write = ({ user_id }) => {
+const Write = ({ user_id, logged, grade }) => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const history = useHistory();
   const params = useParams();
   const [title, setTitle] = useState(null);
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get(location.pathname)
-      .then(function (res) {
-        setTitle(res.data.title);
-        setLoading(false);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-    window.scrollTo(0, 0);
-  }, []);
+    if (logged === true) {
+      if (grade === null) {
+        alert("로그인이 필요합니다.");
+        history.push("/auth/signin");
+      } else {
+        setLoading(true);
+        axios
+          .get(location.pathname)
+          .then(function (res) {
+            setTitle(res.data.title);
+            setLoading(false);
+          })
+          .catch(function (err) {
+            console.log(err);
+          });
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [logged]);
 
   const postTitleMaxLen = (value) => value.length <= 40;
   const postTitle = useInput("", postTitleMaxLen);
@@ -91,7 +98,6 @@ const Write = ({ user_id }) => {
     })
       .then(function (res) {
         if (res.data.process) {
-          console.log("성공");
           history.push(`/forum/${params.category}`);
         }
       })

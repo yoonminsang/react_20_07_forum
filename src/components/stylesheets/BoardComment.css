@@ -132,3 +132,21 @@
 .view_comment .bottom_paging_box {
   height: 69px;
 }
+
+.usertxt,
+.comment_wrap .comment_dccon {
+  width: 820px;
+  /* cursor: pointer; */
+}
+
+.usertxt {
+  float: left;
+  line-height: 20px;
+  /* cursor: pointer; */
+  word-break: break-all;
+  overflow: hidden;
+}
+
+.cmt_info p {
+  line-height: 20px;
+}

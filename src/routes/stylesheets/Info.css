@@ -1,0 +1,47 @@
+.gray {
+  background: rgb(241, 241, 241);
+}
+
+/* .gray * {
+  box-sizing: content-box;
+} */
+
+.innerbox {
+  width: 1160px;
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.gallog_wrap {
+  width: 1160px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallog_wrap.width1160 .container {
+  margin: 0 auto;
+}
+
+.conent_wrap {
+  width: 1160px;
+  min-height: 600px;
+  padding: 35px 0 0px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.gallog_cont,
+.gallog_menu {
+  width: 1050px;
+  margin: 0 auto;
+}
+
+.gallog_menu {
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.gallog_cont {
+  padding-bottom: 37px;
+}

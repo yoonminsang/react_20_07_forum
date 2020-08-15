@@ -114,3 +114,49 @@ tr:first-child td {
   font-size: 12px;
   color: #999;
 }
+
+.user_data {
+  position: absolute;
+  z-index: 2;
+  /* left: 50%;
+  top: 26px;
+  margin-left: -50px; */
+}
+
+.user_data_list {
+  width: 110px;
+  /* width: 120px; */
+  border: 1px solid #ccc;
+  background: #fff;
+  text-align: left;
+}
+
+.user_data_list li {
+  height: 25px;
+  padding: 0 9px;
+  line-height: 25px;
+  border-top: 1px solid #ccc;
+}
+
+.user_data_list li:first-child {
+  border-top: none;
+}
+
+.icon_go {
+  display: inline-block;
+  width: 5px;
+  height: 9px;
+  margin-left: 6px;
+  background-position: -36px -45px;
+}
+
+.user_data .icon_go {
+  margin-left: 10px;
+}
+
+.user_data_list li a {
+  overflow: hidden;
+  display: block;
+  font-size: 12px;
+  color: #333;
+}

@@ -1,8 +1,12 @@
+.sign_form * {
+  box-sizing: border-box;
+}
+
 .sign_form {
   position: relative;
   width: 440px;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 

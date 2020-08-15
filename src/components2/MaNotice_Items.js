@@ -29,9 +29,13 @@ const MaNotice_Items = ({
 
         <div className="post_cont">
           <strong className="tit_post tit_eclip">
-            <a href="/" className="link_cont" target="_blank">
+            <Link
+              to={`/forum/1/mode/notice/page/1/${id}`}
+              className="link_cont"
+              target="_blank"
+            >
               {title}
-            </a>
+            </Link>
           </strong>
           <span className="txt_info fst">매니저</span>
           <span className="txt_info">{created}</span>

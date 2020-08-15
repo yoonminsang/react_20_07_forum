@@ -5,6 +5,9 @@ function mapDispatchToProps(dispatch) {
     autoSignIn: function (user) {
       dispatch({ type: "SIGNIN", user });
     },
+    log: function (logged) {
+      dispatch({ type: "LOG", logged });
+    },
   };
 }
 export default connect(null, mapDispatchToProps)(App);

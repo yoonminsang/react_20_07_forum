@@ -88,7 +88,7 @@ const BoardSearch = ({}) => {
               type="submit"
               onClick={() =>
                 history.push(
-                  `/forum/${params.category}/search/type/${searchType}/Keyword/${search.value}`
+                  `/forum/${params.category}/search/${searchType}/Keyword/${search.value}`
                 )
               }
             >

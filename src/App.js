@@ -7,16 +7,19 @@ import {
   Home,
   AllForum,
   Forum,
-  ForumPost,
+  // ForumPost,
   // Write,
+  Info,
+  InfoType,
   ManageHome,
   ManageCategory,
   ManageNotice,
+  ManageNoticeWriting,
 } from "./routes";
-import { Write } from "./containers";
+import { Write, ForumPost } from "./containers";
 import axios from "axios";
 
-const App = ({ autoSignIn }) => {
+const App = ({ autoSignIn, log }) => {
   useEffect(() => {
     axios
       .get("/logged")
@@ -24,6 +27,7 @@ const App = ({ autoSignIn }) => {
         if (res.data.user) {
           autoSignIn(res.data.user);
         }
+        log(true);
       })
       .catch(function (err) {
         console.log(err);
@@ -46,12 +50,37 @@ const App = ({ autoSignIn }) => {
           path="/manage/notice/page/:pageId"
           component={ManageNotice}
         />
+        <Route
+          exact
+          path="/manage/notice/create"
+          component={ManageNoticeWriting}
+        />
         <Route exact path="/manage/notice" component={ManageNotice} />
         <Route exact path="/manage/category" component={ManageCategory} />
         <Route exact path="/manage" component={ManageHome} />
         <Route exact path="/auth/signup" component={AuthSignUp} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
+        <Route
+          path="/forum/:category/search/:searchType/Keyword/:Keyword/page/:pageId/:postId"
+          component={ForumPost}
+        />
+        <Route
+          path="/forum/:category/search/:searchType/Keyword/:Keyword/page/:pageId"
+          component={Forum}
+        />
+        <Route
+          path="/forum/:category/search/:searchType/Keyword/:Keyword"
+          component={Forum}
+        />
+        <Route
+          path="/forum/:category/mode/:modeType/page/:pageId/:postId"
+          component={ForumPost}
+        />
+        <Route
+          path="/forum/:category/mode/:modeType/page/:pageId"
+          component={Forum}
+        />
         <Route path="/forum/:category/mode/:modeType" component={Forum} />
         <Route
           path="/forum/:category/page/:pageId/:postId"
@@ -61,6 +90,13 @@ const App = ({ autoSignIn }) => {
         <Route path="/forum/:category/write" component={Write} />
         <Route path="/forum/:category" component={Forum} />
         <Route exact path="/forum" component={AllForum} />
+        <Route
+          exact
+          path="/info/:email/:type/page/:pageId"
+          component={InfoType}
+        />
+        <Route exact path="/info/:email/:type" component={InfoType} />
+        <Route exact path="/info/:email" component={Info} />
         <Route exact path="/" component={Home} />
       </Switch>
     </BrowserRouter>

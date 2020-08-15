@@ -1,0 +1,33 @@
+.gallog_menu {
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.gallog_menu li {
+  position: relative;
+  float: left;
+  margin-left: 2px;
+}
+
+.gallog_menu li:first-child {
+  margin-left: 0;
+}
+
+.gallog_menu li a {
+  display: block;
+  width: 102px;
+  height: 35px;
+  padding-right: 1px;
+  line-height: 37px;
+  border: 1px #4a57a8 solid;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.gallog_menu li.on a {
+  background: #4a57a8;
+  color: #fff;
+  text-shadow: 0px -1px #343d8e;
+}

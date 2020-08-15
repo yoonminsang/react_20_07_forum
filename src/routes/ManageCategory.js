@@ -1,7 +1,7 @@
 import React from "react";
 import "./stylesheets/Manage.css";
-import { ManageHeader, ManageMenu, MaCategory } from "../components";
-import { Footer } from "../containers";
+import { ManageMenu, MaCategory } from "../components";
+import { ManageHeader, Footer } from "../containers";
 const ManageCategory = () => {
   return (
     <>

@@ -1,10 +1,10 @@
-* {
+/* * {
   box-sizing: border-box;
-}
+} */
 
 body {
   line-height: 1.25;
-  min-height: 750px;
+  /* min-height: 750px; */
 }
 
 body,
@@ -123,4 +123,60 @@ caption {
 html {
   overflow-x: hidden;
   overflow-y: scroll;
+}
+
+textarea {
+  resize: none;
+}
+
+.font_lightred {
+  color: #ee3c24;
+}
+
+em.font_lightred {
+  font-style: normal;
+}
+
+.user_data_list li a .num {
+  float: right;
+}
+
+.bg_grey {
+  background-color: #f3f3f3;
+}
+
+.width1160 .dchead,
+.width1160 .gnb,
+.width1160 .container,
+.width1160 .info_policy,
+.width1160 .copyright {
+  width: 1160px;
+}
+
+.area_links {
+  position: absolute;
+  top: 9px;
+  right: 0;
+}
+
+.btn_lightpurple.smallest,
+.btn_blue.smallest,
+.btn_grey.smallest,
+.btn_red.smallest,
+.btn_green.smallest {
+  width: auto;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 4px;
+  margin-left: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.gall_writer .user_data_list,
+.album .user_data_list {
+  margin-left: 10px;
 }

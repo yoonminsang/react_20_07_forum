@@ -1,0 +1,30 @@
+.top_bar {
+  width: 1050px;
+  margin: 0 auto;
+  background: #3c4790;
+  font-size: 14px;
+  color: #fff;
+}
+
+.bar {
+  position: relative;
+  width: 1048px;
+  height: 66px;
+  padding: 17px 0 15px;
+  margin: 0 auto;
+  background-color: #3c4790;
+  border: 1px #3c4790 solid;
+}
+
+.galler_info {
+  float: left;
+  height: 28px;
+  padding: 0 20px 0 15px;
+  line-height: 28px;
+  border-radius: 0 15px 15px 0;
+  background: url(https://nstatic.dcinside.com/dc/w/images/bg.png) repeat-x 0 0;
+}
+
+.galler_info .nick_name {
+  color: #fff200;
+}
