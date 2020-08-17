@@ -29,20 +29,18 @@ const BoardList = ({ categoryPost }) => {
     }
   };
   let pageId;
-  let link = [];
+  let link;
   if (params.pageId) {
     pageId = params.pageId;
   } else {
     pageId = 1;
   }
   if (searchType !== undefined) {
-    link.push(
-      `/forum/${category}/search/${searchType}/Keyword/${Keyword}/page/${pageId}`
-    );
+    link = `/forum/${category}/search/${searchType}/Keyword/${Keyword}/page/${pageId}`;
   } else if (modeType !== undefined) {
-    link.push(`/forum/${category}/mode/${modeType}/page/${pageId}`);
+    link = `/forum/${category}/mode/${modeType}/page/${pageId}`;
   } else {
-    link.push(`/forum/${category}/page/${pageId}`);
+    link = `/forum/${category}/page/${pageId}`;
   }
   return (
     <>

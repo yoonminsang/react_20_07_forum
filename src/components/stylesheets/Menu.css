@@ -61,6 +61,16 @@
   line-height: 48px;
 }
 
+.transition .post_num {
+  font-style: normal;
+  color: #fff200;
+}
+
+.transition .num {
+  font-style: normal;
+  color: #6dcff6;
+}
+
 .depth2 {
   position: absolute;
   width: 104px;

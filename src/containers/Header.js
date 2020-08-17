@@ -4,7 +4,7 @@ function mapStateToProps(state) {
   if (state.user !== null) {
     return { displayName: state.user.displayName };
   }
-  return { displayName: state.user };
+  return { displayName: null };
 }
 function mapDispatchToProps(dispatch) {
   return {

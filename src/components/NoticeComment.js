@@ -19,7 +19,7 @@ const BoardComment = ({ user_id, commentRefresh }) => {
     }
     axios({
       method: "post",
-      url: "/forum/comment/create_process",
+      url: "/notice/comment/create_process",
       data: {
         user_id,
         comment,

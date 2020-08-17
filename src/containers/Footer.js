@@ -4,6 +4,6 @@ function mapStateToProps(state) {
   if (state.user !== null) {
     return { grade: state.user.grade };
   }
-  return { grade: state.user };
+  return { grade: null };
 }
 export default connect(mapStateToProps, null)(Footer);

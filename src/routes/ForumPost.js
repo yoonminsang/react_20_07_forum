@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./stylesheets/AllForum.css";
 import "./stylesheets/Forum.css";
 import axios from "axios";
-import { Header, Footer } from "../containers";
+import { Header, Footer, Menu } from "../containers";
 import {
-  Menu,
+  // Menu,
   BoardTitle,
   BoardList,
   BoardBottomMenu,

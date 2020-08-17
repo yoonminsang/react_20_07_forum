@@ -12,37 +12,31 @@ import {
 } from "../components";
 import { useLocation, useHistory, useParams } from "react-router-dom";
 import "./stylesheets/Write.css";
-import { useInput } from "../hooks";
 
-const Write = ({ user_id, logged, grade }) => {
+const Modify = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
   const history = useHistory();
   const params = useParams();
   const [title, setTitle] = useState(null);
   useEffect(() => {
-    if (logged === true) {
-      if (grade === null) {
-        alert("로그인이 필요합니다.");
-        history.push("/auth/signin");
-      } else {
-        setLoading(true);
-        axios
-          .get(location.pathname)
-          .then(function (res) {
-            setTitle(res.data.title);
-            setLoading(false);
-          })
-          .catch(function (err) {
-            console.log(err);
-          });
-        window.scrollTo(0, 0);
-      }
-    }
-  }, [logged]);
-
-  const postTitleMaxLen = (value) => value.length <= 40;
-  const postTitle = useInput("", postTitleMaxLen);
+    axios
+      .get(location.pathname)
+      .then(function (res) {
+        if (res.data === false) {
+          alert("자격이 없습니다.");
+          history.goBack();
+        }
+        setTitle(res.data.title);
+        setPostTitle(res.data.post.title);
+        setContent(res.data.post.content);
+        setLoading(false);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }, []);
+  const [postTitle, setPostTitle] = useState("");
   const [content, setContent] = useState("");
   const modules = {
     toolbar: [
@@ -94,14 +88,15 @@ const Write = ({ user_id, logged, grade }) => {
       method: "post",
       url: `${location.pathname}/process`,
       data: {
-        title: postTitle.value,
+        title: postTitle,
         content,
-        user_id,
       },
     })
       .then(function (res) {
         if (res.data.process) {
           history.push(`/forum/${params.category}`);
+        } else {
+          alert("로그인을 확인해주세요");
         }
       })
       .catch(function (err) {
@@ -111,10 +106,10 @@ const Write = ({ user_id, logged, grade }) => {
 
   return (
     <>
-      <Header></Header>
-      <Menu></Menu>
       {loading === false && (
         <>
+          <Header></Header>
+          <Menu></Menu>
           <div className="container width1160 listwrap clear">
             <BoardTitle title={title}></BoardTitle>
             <div className="input_box input_write_tit">
@@ -123,7 +118,9 @@ const Write = ({ user_id, logged, grade }) => {
                 type="text"
                 className="put_inquiry"
                 placeholder="제목을 입력하세요"
-                {...postTitle}
+                value={postTitle}
+                onChange={(e) => setPostTitle(e.target.value)}
+                maxLength="40"
               ></input>
             </div>
             <ReactQuill
@@ -153,10 +150,10 @@ const Write = ({ user_id, logged, grade }) => {
               </form>
             </div>
           </div>
+          <Footer></Footer>
         </>
       )}
-      <Footer></Footer>
     </>
   );
 };
-export default Write;
+export default Modify;

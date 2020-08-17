@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./stylesheets/Home.css";
-import { Header, Footer } from "../containers";
-import { Menu } from "../components";
+import { Header, Footer, Menu } from "../containers";
+// import { Menu } from "../components";
 const Home = () => {
   useEffect(() => {
     document.title = "M's forum";

@@ -9,14 +9,17 @@ import {
   Forum,
   // ForumPost,
   // Write,
+  Modify,
   Info,
   InfoType,
+  Notice,
+  // NoticePost,
   ManageHome,
   ManageCategory,
   ManageNotice,
   ManageNoticeWriting,
 } from "./routes";
-import { Write, ForumPost } from "./containers";
+import { Write, ForumPost, NoticePost } from "./containers";
 import axios from "axios";
 
 const App = ({ autoSignIn, log }) => {
@@ -61,6 +64,9 @@ const App = ({ autoSignIn, log }) => {
         <Route exact path="/auth/signup" component={AuthSignUp} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
         <Route exact path="/auth/signin" component={AuthSignIn} />
+        <Route path="/notice/page/:pageId/:postId" component={NoticePost} />
+        <Route path="/notice/page/:pageId" component={Notice} />
+        <Route exact path="/notice" component={Notice} />
         <Route
           path="/forum/:category/search/:searchType/Keyword/:Keyword/page/:pageId/:postId"
           component={ForumPost}
@@ -87,6 +93,7 @@ const App = ({ autoSignIn, log }) => {
           component={ForumPost}
         />
         <Route path="/forum/:category/page/:pageId" component={Forum} />
+        <Route path="/forum/:category/modify/:pageId" component={Modify} />
         <Route path="/forum/:category/write" component={Write} />
         <Route path="/forum/:category" component={Forum} />
         <Route exact path="/forum" component={AllForum} />

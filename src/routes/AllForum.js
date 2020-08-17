@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./stylesheets/AllForum.css";
 import axios from "axios";
-import { Header, Footer } from "../containers";
-import { Menu } from "../components";
+import { Header, Footer, Menu } from "../containers";
+// import { Menu } from "../components";
 import { Link } from "react-router-dom";
 
 const AllForum = () => {

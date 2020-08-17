@@ -1,9 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./stylesheets/Menu.css";
 import axios from "axios";
 
-const Menu = () => {
+const Menu = ({ email }) => {
+  const history = useHistory();
+  const [yesterPCount, setYesterPCount] = useState(null);
+  const [yesterCCount, setYesterCCount] = useState(null);
+  useEffect(() => {
+    axios
+      .get("/yesterday")
+      .then(function (res) {
+        setYesterPCount(res.data.post);
+        setYesterCCount(res.data.comment);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }, []);
+
   // const [subject, setSubject] = useState(null);
   // useEffect(() => {
   //   axios
@@ -46,7 +61,18 @@ const Menu = () => {
               </div> */}
             </li>
             <li>
-              <Link to="/info">갤로그</Link>
+              {email === null ? (
+                <a
+                  onClick={() => (
+                    alert("로그인이 필요합니다."), history.push("/auth/signin")
+                  )}
+                  style={{ cursor: "pointer" }}
+                >
+                  갤로그
+                </a>
+              ) : (
+                <Link to={`/info/${email}`}>갤로그</Link>
+              )}
             </li>
             <li>
               <Link to="/popular">인기글</Link>
@@ -58,11 +84,11 @@ const Menu = () => {
           <div className="transition">
             {transition === true ? (
               <div className={transition === true ? "on" : false}>
-                M's forum에 오신것을
+                어제 <em className="post_num">{yesterPCount}개</em> 게시글 등록
               </div>
             ) : (
               <div className={transition === false ? "on" : false}>
-                환영합니다
+                어제 <em className="num">{yesterCCount}개</em> 댓글 등록
               </div>
             )}
           </div>

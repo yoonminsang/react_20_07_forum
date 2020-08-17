@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.manage_header * {
+  box-sizing: border-box;
+}
+
 .mManage .mContent {
   position: relative;
   width: 1150px;

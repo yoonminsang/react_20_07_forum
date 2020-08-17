@@ -1,4 +1,4 @@
-import ForumPost from "../routes/ForumPost";
+import NoticePost from "../routes/NoticePost";
 import { connect } from "react-redux";
 function mapStateToProps(state) {
   if (state.user !== null) {
@@ -6,4 +6,4 @@ function mapStateToProps(state) {
   }
   return { user_id: null };
 }
-export default connect(mapStateToProps, null)(ForumPost);
+export default connect(mapStateToProps, null)(NoticePost);
