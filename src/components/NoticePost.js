@@ -108,7 +108,22 @@ const NoticePost = ({ post, goodbadRefresh }) => {
               </div>
             </div>
             <div className="recom_bottom_box clear">
-              <button type="button" className="btn_hitgall">
+              <button
+                type="button"
+                className="btn_snsmore"
+                onClick={() => (
+                  navigator.clipboard.writeText(window.location.href),
+                  alert("현재 url이 복사되었습니다.")
+                )}
+                style={{ width: "100%" }}
+              >
+                <em className="sp_img icon_snsmore"></em>공유
+              </button>
+              {/* <button
+                type="button"
+                className="btn_hitgall"
+                style={{ width: "50%" }}
+              >
                 <em className="sp_img icon_hitgall"></em>힛추
               </button>
               <button
@@ -118,12 +133,10 @@ const NoticePost = ({ post, goodbadRefresh }) => {
                   navigator.clipboard.writeText(window.location.href),
                   alert("현재 url이 복사되었습니다.")
                 )}
+                style={{ width: "50%", marginLeft: "0px", borderRight: "0px" }}
               >
                 <em className="sp_img icon_snsmore"></em>공유
-              </button>
-              <button type="button" className="btn_report">
-                <em className="sp_img icon_report"></em>신고
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

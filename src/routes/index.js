@@ -14,3 +14,8 @@ export { default as ManageHome } from "./ManageHome";
 export { default as ManageCategory } from "./ManageCategory";
 export { default as ManageNotice } from "./ManageNotice";
 export { default as ManageNoticeWriting } from "./ManageNoticeWriting";
+export { default as ManageHit } from "./ManageHit";
+export { default as ManageReport } from "./ManageReport";
+export { default as ManageNoticeModify } from "./ManageNoticeModify";
+export { default as HitForum } from "./HitForum";
+export { default as HitForumPost } from "./HitForumPost";

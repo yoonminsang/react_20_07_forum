@@ -75,7 +75,7 @@ const Menu = ({ email }) => {
               )}
             </li>
             <li>
-              <Link to="/popular">인기글</Link>
+              <Link to="/hit">HIT 포럼</Link>
             </li>
             <li>
               <Link to="/notice">공지글</Link>

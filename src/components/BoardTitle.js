@@ -13,7 +13,10 @@ const BoardTitle = ({ title }) => {
         <div className="page_head clear">
           <div className="fl clear">
             <h2>
-              <Link to={`/forum/${params.category}`}>{title} 포럼</Link>
+              <Link to={`/forum/${params.category}`}>
+                {title} 포럼
+                {/* <span>({counting})</span> */}
+              </Link>
             </h2>
           </div>
         </div>

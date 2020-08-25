@@ -30,7 +30,7 @@ const MaNotice_Items = ({
         <div className="post_cont">
           <strong className="tit_post tit_eclip">
             <Link
-              to={`/forum/1/mode/notice/page/1/${id}`}
+              to={`/notice/page/1/${id}`}
               className="link_cont"
               target="_blank"
             >
@@ -44,7 +44,7 @@ const MaNotice_Items = ({
         <div className="post_btn">
           <div className="info_btn">
             <div>
-              <Link to={`/manage/notice/${id}`} className="btn_post">
+              <Link to={`/manage/notice/modify/${id}`} className="btn_post">
                 수정
               </Link>
               <Link to="#" className="btn_post" onClick={noticeDelete(id)}>

@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import "./stylesheets/BoardSearch.css";
 import { useInput } from "../hooks";
 
-const NoticeSearch = ({}) => {
+const HitSearch = ({}) => {
   const history = useHistory();
   const searchMaxLen = (value) => value.length <= 100;
   const search = useInput("", searchMaxLen);
@@ -58,7 +58,7 @@ const NoticeSearch = ({}) => {
               >
                 내용
               </li>
-              {/* <li
+              <li
                 onClick={() => {
                   setSearchType("displayName");
                   setSearchTypeHan("글쓴이");
@@ -66,7 +66,7 @@ const NoticeSearch = ({}) => {
                 }}
               >
                 글쓴이
-              </li> */}
+              </li>
               <li
                 onClick={() => {
                   setSearchType("title+content");
@@ -87,7 +87,7 @@ const NoticeSearch = ({}) => {
               type="submit"
               onClick={() =>
                 history.push(
-                  `/notice/search/${searchType}/Keyword/${search.value}`
+                  `/hit/search/${searchType}/Keyword/${search.value}`
                 )
               }
             >
@@ -99,4 +99,4 @@ const NoticeSearch = ({}) => {
     </>
   );
 };
-export default NoticeSearch;
+export default HitSearch;

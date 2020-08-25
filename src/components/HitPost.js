@@ -3,36 +3,14 @@ import { Link, useParams } from "react-router-dom";
 import "./stylesheets/BoardPost.css";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
-
-const BoardPost = ({ post, user_id, goodbadRefresh }) => {
+const HitPost = ({ post, goodbadRefresh }) => {
   const params = useParams();
-  const category = params.category;
   const postId = params.postId;
-  const [userPost, setUserPost] = useState(null);
-  const [userComment, setUserComment] = useState(null);
-  const [selected, setSelected] = useState(false);
-  const selecting = (email) => () => {
-    if (selected) {
-      setSelected(false);
-    } else {
-      axios
-        .get(`/forum//info/${email}`)
-        .then(function (res) {
-          setUserPost(res.data.post);
-          setUserComment(res.data.comment);
-          setSelected(true);
-        })
-        .catch(function (err) {
-          console.log(err);
-        });
-    }
-  };
   const good = () => {
     axios({
       method: "post",
-      url: "/forum/good/process",
+      url: "/hit/good/process",
       data: {
-        user_id,
         postId,
       },
     })
@@ -49,9 +27,8 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
   const bad = () => {
     axios({
       method: "post",
-      url: "/forum/bad/process",
+      url: "/hit/bad/process",
       data: {
-        user_id,
         postId,
       },
     })
@@ -59,42 +36,6 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
         if (res.data) {
           alert(res.data);
           goodbadRefresh();
-        }
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  };
-  const hit = () => {
-    axios({
-      method: "post",
-      url: "/forum/hit/process",
-      data: {
-        user_id,
-        postId,
-      },
-    })
-      .then(function (res) {
-        if (res.data) {
-          alert(res.data);
-        }
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  };
-  const report = () => {
-    axios({
-      method: "post",
-      url: "/forum/report/process",
-      data: {
-        user_id,
-        postId,
-      },
-    })
-      .then(function (res) {
-        if (res.data) {
-          alert(res.data);
         }
       })
       .catch(function (err) {
@@ -114,7 +55,7 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
             </h3>
             <div className="gall_writer ub-writer">
               <div className="fl">
-                <span className="nickname in" onClick={selecting(post.email)}>
+                <span className="nickname in">
                   <em>{post.displayName}</em>
                 </span>
                 {/* <a className="writer_nikcon">
@@ -124,40 +65,7 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
                     height="11"
                   ></img>
                 </a> */}
-                {selected === true && (
-                  <div
-                    className="user_data"
-                    style={{ display: "inline-block" }}
-                  >
-                    <ul className="user_data_list">
-                      <li>
-                        <Link to={`/info/${post.email}/posting`}>
-                          글<em className="num font_lightred">{userPost}</em>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to={`/info/${post.email}/comment`}>
-                          댓글
-                          <em className="num font_lightred">{userComment}</em>
-                        </Link>
-                      </li>
-                      <li className="bg_grey">
-                        <Link
-                          to={`/forum/${category}/search/displayName/Keyword/${post.displayName}`}
-                        >
-                          작성글 검색
-                          <em className="sp_img icon_go"></em>
-                        </Link>
-                      </li>
-                      <li className="bg_grey">
-                        <Link to={`/info/${post.email}`}>
-                          갤로그 가기
-                          <em className="sp_img icon_go"></em>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                )}
+
                 <span className="gall_date" title={post.created}>
                   {post.created}
                 </span>
@@ -200,9 +108,6 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
               </div>
             </div>
             <div className="recom_bottom_box clear">
-              <button type="button" className="btn_hitgall" onClick={hit}>
-                <em className="sp_img icon_hitgall"></em>힛추
-              </button>
               <button
                 type="button"
                 className="btn_snsmore"
@@ -210,11 +115,9 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
                   navigator.clipboard.writeText(window.location.href),
                   alert("현재 url이 복사되었습니다.")
                 )}
+                style={{ width: "100%" }}
               >
                 <em className="sp_img icon_snsmore"></em>공유
-              </button>
-              <button type="button" className="btn_report" onClick={report}>
-                <em className="sp_img icon_report"></em>신고
               </button>
             </div>
           </div>
@@ -223,4 +126,4 @@ const BoardPost = ({ post, user_id, goodbadRefresh }) => {
     </>
   );
 };
-export default BoardPost;
+export default HitPost;

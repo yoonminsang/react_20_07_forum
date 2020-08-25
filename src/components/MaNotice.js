@@ -54,12 +54,13 @@ const MaNotice = () => {
     const value = e.target.value;
     const id = items
       .filter((item) => item.checked === true)
-      .map((item) => item.id);
+      .map((item) => item.id)
+      .join();
     axios({
       method: "post",
       url: "/manage/notice/select_status_process",
       data: {
-        id: id.join(),
+        id,
         status: value,
       },
     })

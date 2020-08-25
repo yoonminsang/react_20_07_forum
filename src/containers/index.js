@@ -7,3 +7,4 @@ export { default as Menu } from "./Menu";
 export { default as ForumPost } from "./ForumPost";
 export { default as NoticePost } from "./NoticePost";
 export { default as ManageHeader } from "./ManageHeader";
+export { default as HitForumPost } from "./HitForumPost";

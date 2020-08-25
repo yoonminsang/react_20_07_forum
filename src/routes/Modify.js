@@ -86,8 +86,9 @@ const Modify = () => {
     }
     axios({
       method: "post",
-      url: `${location.pathname}/process`,
+      url: `/forum/${params.category}/modify_process`,
       data: {
+        postId: params.postId,
         title: postTitle,
         content,
       },

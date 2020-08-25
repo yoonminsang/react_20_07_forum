@@ -56,7 +56,8 @@ th {
 }
 
 .gall_tit.selected a {
-  color: crimson;
+  color: purple;
+  font-weight: bold;
 }
 
 .list .gall_tit a:hover {

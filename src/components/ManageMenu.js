@@ -20,10 +20,10 @@ const ManageMenu = () => {
           </strong>
           <ul className="list_menu">
             <li>
-              <Link to="/manage/post">글 관리</Link>
+              <Link to="/manage/hit">힛 포럼 관리</Link>
             </li>
             <li>
-              <Link to="/manage/comments">댓글 관리</Link>
+              <Link to="/manage/report">신고글 관리</Link>
             </li>
             <li>
               <Link to="/manage/category">카테고리 관리</Link>
