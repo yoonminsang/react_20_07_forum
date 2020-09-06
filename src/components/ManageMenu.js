@@ -23,7 +23,13 @@ const ManageMenu = () => {
               <Link to="/manage/hit">힛 포럼 관리</Link>
             </li>
             <li>
+              <Link to="/manage/hitForum">힛 포럼 게시판 관리</Link>
+            </li>
+            <li>
               <Link to="/manage/report">신고글 관리</Link>
+            </li>
+            <li>
+              <Link to="/manage/post">전체 글 관리</Link>
             </li>
             <li>
               <Link to="/manage/category">카테고리 관리</Link>

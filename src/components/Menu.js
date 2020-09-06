@@ -63,9 +63,7 @@ const Menu = ({ email }) => {
             <li>
               {email === null ? (
                 <a
-                  onClick={() => (
-                    alert("로그인이 필요합니다."), history.push("/auth/signin")
-                  )}
+                  onClick={() => alert("로그인이 필요합니다.")}
                   style={{ cursor: "pointer" }}
                 >
                   갤로그

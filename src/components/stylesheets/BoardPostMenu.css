@@ -9,3 +9,9 @@
 .view_bottom_btnbox .fl button:first-child {
   margin-left: 0px;
 }
+
+.wrap_search .layer_opt .lab_all {
+  height: auto;
+  margin: 5px 0;
+  padding: 7px 24px 8px 17px;
+}

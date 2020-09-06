@@ -37,11 +37,15 @@ const MaNotice_Items = ({
               {title}
             </Link>
           </strong>
+          <span className="txt_cate txt_ellip">공지</span>
           <span className="txt_info fst">매니저</span>
           <span className="txt_info">{created}</span>
           <span className="txt_info">댓글 {comment}</span>
         </div>
         <div className="post_btn">
+          {status === "hidden" && (
+            <span className="ico_blog ico_private">비공개</span>
+          )}
           <div className="info_btn">
             <div>
               <Link to={`/manage/notice/modify/${id}`} className="btn_post">

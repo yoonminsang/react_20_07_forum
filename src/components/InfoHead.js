@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./stylesheets/InfoHead.css";
 import axios from "axios";
 
-const InfoHead = () => {
+const InfoHead = ({ email }) => {
+  const history = useHistory();
   return (
     <>
       <div className="headbox">
@@ -17,10 +18,22 @@ const InfoHead = () => {
                 <Link to="/forum">포럼</Link>
               </li>
               <li>
-                <Link to="/info">갤로그</Link>
+                {email === null ? (
+                  <a
+                    onClick={() => (
+                      alert("로그인이 필요합니다."),
+                      history.push("/auth/signin")
+                    )}
+                    style={{ cursor: "pointer" }}
+                  >
+                    갤로그
+                  </a>
+                ) : (
+                  <Link to={`/info/${email}`}>갤로그</Link>
+                )}
               </li>
               <li>
-                <Link to="/popular">인기글</Link>
+                <Link to="/hit">인기글</Link>
               </li>
               <li>
                 <Link to="/notice">공지글</Link>

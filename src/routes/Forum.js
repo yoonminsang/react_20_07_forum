@@ -11,6 +11,7 @@ import {
   BoardBottomMenu,
   BoardPaging,
   BoardSearch,
+  RecentForum,
 } from "../components";
 import { useLocation } from "react-router-dom";
 
@@ -45,11 +46,21 @@ const Forum = () => {
           <main className="container width1160 listwrap clear">
             <section className="left_content">
               <BoardTitle title={title}></BoardTitle>
-              <BoardMenu></BoardMenu>
-              <BoardList categoryPost={categoryPost}></BoardList>
-              <BoardBottomMenu></BoardBottomMenu>
-              <BoardPaging counting={counting}></BoardPaging>
-              <BoardSearch></BoardSearch>
+              <article>
+                <h2 className="blind">최근방문 포럼</h2>
+                <div className="issue_wrap">
+                  <div className="issuebox gallery_box">
+                    <RecentForum></RecentForum>
+                  </div>
+                </div>
+              </article>
+              <article>
+                <BoardMenu></BoardMenu>
+                <BoardList categoryPost={categoryPost}></BoardList>
+                <BoardBottomMenu></BoardBottomMenu>
+                <BoardPaging counting={counting}></BoardPaging>
+                <BoardSearch></BoardSearch>
+              </article>
             </section>
             <section className="right_content">
               <div>

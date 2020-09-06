@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams, Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { useHistory, Link, useParams } from "react-router-dom";
 import { useInput } from "../hooks";
 
-const MaNotice_Items = ({
+const ManageReportMenu = ({
   allChecked,
   changeAllChecked,
   stateMenu,
   setStateMenu,
   isChecked,
-  noticeSelectDelete,
-  noticeSelectChangeState,
+  reportSelect,
 }) => {
   const history = useHistory();
   const params = useParams();
-  const location = useLocation();
   const status = params.status;
   const changeStateMenu = () => {
     stateMenu === true ? setStateMenu(false) : setStateMenu(true);
@@ -33,9 +31,6 @@ const MaNotice_Items = ({
   const changeViewState = () => {
     viewState === true ? setViewState(false) : setViewState(true);
   };
-  useEffect(() => {
-    setViewState(false);
-  }, [location.pathname]);
 
   return (
     <>
@@ -142,7 +137,7 @@ const MaNotice_Items = ({
                 e.preventDefault();
                 setSearchStateMenu(false);
                 history.push(
-                  `/manage/notice/search/type/${searchState}/Keyword/${search.value}`
+                  `/manage/report/search/type/${searchState}/Keyword/${search.value}`
                 );
               }}
             >
@@ -176,70 +171,61 @@ const MaNotice_Items = ({
             <ul className="list_opt">
               <li>
                 <label className="lab_btn">
-                  공개
+                  신고 대기
                   <input
                     type="button"
                     className="btn_g"
-                    value="visible"
-                    onClick={noticeSelectChangeState}
+                    onClick={reportSelect("NULL")}
                   ></input>
                 </label>
               </li>
               <li>
                 <label className="lab_btn">
-                  비공개
+                  신고 보류
                   <input
                     type="button"
                     className="btn_g"
-                    value="hidden"
-                    onClick={noticeSelectChangeState}
+                    onClick={reportSelect("off")}
                   ></input>
                 </label>
               </li>
               <li>
                 <label className="lab_btn">
-                  삭제
+                  글 제거
                   <input
                     type="button"
                     className="btn_g"
-                    value="delete"
-                    onClick={noticeSelectDelete}
+                    onClick={reportSelect("delete")}
                   ></input>
                 </label>
               </li>
             </ul>
           </div>
         </div>
+
         <div className={viewState === true ? "opt_blog opt_open" : "opt_blog"}>
           <button className="btn_opt" type="button" onClick={changeViewState}>
             보기<span className="ico_blog ico_open"></span>
           </button>
           <div className="layer_opt layer_double">
-            <Link to="/manage/notice" className="lab_btn lab_all">
-              모든 글 보기
+            <Link to="/manage/report" className="lab_btn lab_all">
+              신고 글 전체보기
               <input
                 type="button"
                 className="btn_g"
-                value="모든 글 보기"
+                value="신고 글 보기"
               ></input>
             </Link>
             <strong className="tit_opt">상태별 보기</strong>
             <ul className="list_opt">
-              {/* <li
-                className={state === undefined || state === "all" ? "on" : null}
-              >
-                <Link to="/manage/notice/all" className="lab_btn">
-                  전체
-                </Link>
-              </li> */}
-              <li className={status === "visible" ? "on" : null}>
-                <Link to="/manage/notice/visible" className="lab_btn">
-                  공개
+              <li className={status === "null" ? "on" : null}>
+                <Link to="/manage/report/null" className="lab_btn">
+                  신고 글 대기
                 </Link>
               </li>
-              <li className={status === "hidden" ? "on" : null}>
-                <Link to="/manage/notice/hidden" className="lab_btn">
-                  비공개
+              <li className={status === "off" ? "on" : null}>
+                <Link to="/manage/report/off" className="lab_btn">
+                  신고 글 보류
                 </Link>
               </li>
             </ul>
@@ -249,4 +235,4 @@ const MaNotice_Items = ({
     </>
   );
 };
-export default MaNotice_Items;
+export default ManageReportMenu;

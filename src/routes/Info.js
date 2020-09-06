@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./stylesheets/Info.css";
 import {
-  InfoHead,
+  // InfoHead,
   InfoTopBar,
   InfoMenu,
   InfoContentHeader,
@@ -9,7 +9,7 @@ import {
 } from "../components";
 import axios from "axios";
 import { useLocation, useParams } from "react-router-dom";
-import { Footer } from "../containers";
+import { InfoHead, Footer } from "../containers";
 
 const Info = () => {
   const [loading, setLoading] = useState(true);

@@ -14,6 +14,7 @@ import {
   BoardCommentList,
   BoardComment,
   BoardPostMenu,
+  RecentForum,
 } from "../components";
 import { useLocation, useParams } from "react-router-dom";
 
@@ -84,8 +85,16 @@ const Forum = ({ user_id, displayName }) => {
       <>
         {loading === false && (
           <>
-            <main className="container width1160 listwrap clear gallery_view">
+            <main className="container width1160 viewwrap clear gallery_view">
               <BoardTitle title={title}></BoardTitle>
+              <article>
+                <h2 className="blind">최근방문 포럼</h2>
+                <div className="issue_wrap">
+                  <div className="issuebox gallery_box">
+                    <RecentForum></RecentForum>
+                  </div>
+                </div>
+              </article>
               <article>
                 <BoardPost
                   post={post}

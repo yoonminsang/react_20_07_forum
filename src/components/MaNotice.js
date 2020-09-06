@@ -90,7 +90,7 @@ const MaNotice = () => {
       .get(location.pathname)
       .then(function (res) {
         setItems(res.data.notice_post);
-        setItemsCounting(res.data.notice_counting.counting);
+        setItemsCounting(res.data.notice_counting);
         setStateMenu(false);
         setLoading(false);
       })

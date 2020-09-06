@@ -9,7 +9,6 @@ import React, { useState, useEffect } from "react";
 import "../components/stylesheets/MaNotice.css";
 import { Link, useLocation, useParams } from "react-router-dom";
 import axios from "axios";
-// import { MaNotice_Menu, MaNotice_Items, MaNotice_Paging } from "../components2";
 
 import { ManageHeader, Footer } from "../containers";
 const ManageHit = () => {
@@ -98,7 +97,7 @@ const ManageHit = () => {
     }
   }, [items]);
 
-  const hitChangeState = (id, status) => () => {
+  const hitChangeState = (id, status) => {
     axios({
       method: "post",
       url: "/manage/hit/select_process",
@@ -118,54 +117,6 @@ const ManageHit = () => {
         console.log(err);
       });
   };
-
-  // const noticeDelete = (id) => () => {
-  //   axios({
-  //     method: "post",
-  //     url: "/manage/notice/delete_process",
-  //     data: {
-  //       id,
-  //     },
-  //   })
-  //     .then(function (res) {
-  //       if (res.data.process) {
-  //         refresh();
-  //       } else {
-  //         alert("오류 발생");
-  //       }
-  //     })
-  //     .catch(function (err) {
-  //       console.log(err);
-  //     });
-  // };
-
-  // const noticeChangeState = (e, id, index) => {
-  //   const value = e.target.value;
-  //   if (value !== items[index].status) {
-  //     axios({
-  //       method: "post",
-  //       url: "/manage/notice/status_process",
-  //       data: {
-  //         id,
-  //         status: value,
-  //       },
-  //     })
-  //       .then(function (res) {
-  //         if (res.data.process) {
-  //           setItems(
-  //             items.map((item) =>
-  //               item.id === id ? { ...item, status: value } : item
-  //             )
-  //           );
-  //         } else {
-  //           alert("오류 발생");
-  //         }
-  //       })
-  //       .catch(function (err) {
-  //         console.log(err);
-  //       });
-  //   }
-  // };
 
   return (
     <>
@@ -213,14 +164,19 @@ const ManageHit = () => {
                           <ManageHitItems
                             key={index}
                             id={item.id}
+                            category_id={item.category_id}
                             title={item.title}
                             comment={item.comment}
+                            hit={item.hit}
+                            hit_status={item.hit_status}
+                            good={item.good}
                             created={item.created}
                             checked={item.checked}
+                            hit_status={item.hit_status}
                             changeChildChecked={changeChildChecked}
                             hitChangeState={hitChangeState}
-                            // noticeDelete={noticeDelete}
-                            // noticeChangeState={noticeChangeState}
+                            name={item.name}
+                            displayName={item.displayName}
                           ></ManageHitItems>
                         ))}
                     </ul>

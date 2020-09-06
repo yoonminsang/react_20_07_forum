@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams, Link, useLocation } from "react-router-dom";
+import { useHistory, useParams, useLocation, Link } from "react-router-dom";
 import { useInput } from "../hooks";
 
-const MaNotice_Items = ({
+const ManageHitMenu = ({
   allChecked,
   changeAllChecked,
   stateMenu,
   setStateMenu,
   isChecked,
-  noticeSelectDelete,
-  noticeSelectChangeState,
+  postSelectDelete,
+  subject,
+  subjectCategory,
 }) => {
   const history = useHistory();
-  const params = useParams();
   const location = useLocation();
-  const status = params.status;
+  const params = useParams();
+  const category = params.category;
   const changeStateMenu = () => {
     stateMenu === true ? setStateMenu(false) : setStateMenu(true);
   };
@@ -142,7 +143,7 @@ const MaNotice_Items = ({
                 e.preventDefault();
                 setSearchStateMenu(false);
                 history.push(
-                  `/manage/notice/search/type/${searchState}/Keyword/${search.value}`
+                  `/manage/post/search/type/${searchState}/Keyword/${search.value}`
                 );
               }}
             >
@@ -176,37 +177,34 @@ const MaNotice_Items = ({
             <ul className="list_opt">
               <li>
                 <label className="lab_btn">
-                  공개
+                  글 삭제
                   <input
                     type="button"
                     className="btn_g"
-                    value="visible"
-                    onClick={noticeSelectChangeState}
+                    onClick={postSelectDelete}
+                  ></input>
+                </label>
+              </li>
+              {/* <li>
+                <label className="lab_btn">
+                  힛 포럼 대기
+                  <input
+                    type="button"
+                    className="btn_g"
+                    onClick={hitSelect("null")}
                   ></input>
                 </label>
               </li>
               <li>
                 <label className="lab_btn">
-                  비공개
+                  힛 포럼 보류
                   <input
                     type="button"
                     className="btn_g"
-                    value="hidden"
-                    onClick={noticeSelectChangeState}
+                    onClick={hitSelect("off")}
                   ></input>
                 </label>
-              </li>
-              <li>
-                <label className="lab_btn">
-                  삭제
-                  <input
-                    type="button"
-                    className="btn_g"
-                    value="delete"
-                    onClick={noticeSelectDelete}
-                  ></input>
-                </label>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
@@ -215,7 +213,7 @@ const MaNotice_Items = ({
             보기<span className="ico_blog ico_open"></span>
           </button>
           <div className="layer_opt layer_double">
-            <Link to="/manage/notice" className="lab_btn lab_all">
+            <Link to="/manage/post" className="lab_btn lab_all">
               모든 글 보기
               <input
                 type="button"
@@ -223,30 +221,44 @@ const MaNotice_Items = ({
                 value="모든 글 보기"
               ></input>
             </Link>
-            <strong className="tit_opt">상태별 보기</strong>
+            {subject.map((sub, index) => (
+              <div className="scroll_opt" key={sub.id}>
+                <strong className="tit_opt">{sub.name}</strong>
+                <ul>
+                  {subjectCategory[index].map((cate) => (
+                    <li
+                      key={cate.id}
+                      className={category == cate.id ? "on" : null}
+                    >
+                      <Link
+                        to={`/manage/post/category/${cate.id}`}
+                        className="lab_btn"
+                      >
+                        {cate.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
+            {/* <strong className="tit_opt"> 보기</strong>
             <ul className="list_opt">
-              {/* <li
-                className={state === undefined || state === "all" ? "on" : null}
-              >
-                <Link to="/manage/notice/all" className="lab_btn">
-                  전체
-                </Link>
-              </li> */}
-              <li className={status === "visible" ? "on" : null}>
-                <Link to="/manage/notice/visible" className="lab_btn">
-                  공개
+              <li className={category === "null" ? "on" : null}>
+                <Link to="/manage/hit/null" className="lab_btn">
+                  힛 포럼 대기
                 </Link>
               </li>
-              <li className={status === "hidden" ? "on" : null}>
-                <Link to="/manage/notice/hidden" className="lab_btn">
-                  비공개
+              <li className={category === "off" ? "on" : null}>
+                <Link to="/manage/hit/off" className="lab_btn">
+                  힛 포럼 보류
                 </Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
     </>
   );
 };
-export default MaNotice_Items;
+export default ManageHitMenu;

@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const ManageHitItems = ({
+const ManageReportItems = ({
   id,
   category_id,
   title,
   comment,
-  hit,
-  hit_status,
-  good,
   created,
+  report,
+  bad,
+  report_status,
   checked,
   changeChildChecked,
-  hitChangeState,
+  reportChangeState,
   name,
   displayName,
 }) => {
@@ -44,22 +44,30 @@ const ManageHitItems = ({
           <span className="txt_info fst">{displayName}</span>
           <span className="txt_info">{created}</span>
           <span className="txt_info">댓글 {comment}</span>
-          <span className="txt_info">힛 {hit}</span>
-          <span className="txt_info">추천 {good}</span>
+          <span className="txt_info">신고 {report}</span>
+          <span className="txt_info">비추천 {bad}</span>
         </div>
         <div className="post_btn">
-          {hit_status === "off" && (
+          {report_status === "off" && (
             <span className="ico_blog ico_private">비공개</span>
           )}
           <div className="info_btn">
             <div>
+              {/* <button
+                type="button"
+                className="btn_post"
+                style={{ padding: "0" }}
+                onClick={reportChangeState(id, "off")}
+              >
+                보류
+              </button> */}
               <button
                 type="button"
                 className="btn_post"
                 style={{ padding: "0" }}
-                onClick={() => hitChangeState(id, "on")}
+                onClick={() => reportChangeState(id, "delete")}
               >
-                추가
+                제거
               </button>
               <div
                 className={
@@ -74,7 +82,7 @@ const ManageHitItems = ({
                   onClick={() => setItemStateMenu(true)}
                 >
                   <span className="txt_eclip">
-                    {hit_status === "null" ? "대기" : "보류"}
+                    {report_status === "null" ? "대기" : "보류"}
                   </span>
                   <span className="ico_blog"></span>
                 </button>
@@ -84,7 +92,7 @@ const ManageHitItems = ({
                       type="radio"
                       className="inp_set"
                       onClick={() => {
-                        hitChangeState(id, "null");
+                        reportChangeState(id, "null");
                         setItemStateMenu(false);
                       }}
                       value="null"
@@ -96,7 +104,7 @@ const ManageHitItems = ({
                       type="radio"
                       className="inp_set"
                       onClick={() => {
-                        hitChangeState(id, "off");
+                        reportChangeState(id, "off");
                         setItemStateMenu(false);
                       }}
                       value="hidden"
@@ -112,14 +120,6 @@ const ManageHitItems = ({
                   </button>
                 </div>
               </div>
-              {/* <button
-                type="button"
-                className="btn_post"
-                style={{ padding: "0" }}
-                onClick={hitChangeState(id, "off")}
-              >
-                제거
-              </button> */}
             </div>
           </div>
         </div>
@@ -127,4 +127,4 @@ const ManageHitItems = ({
     </>
   );
 };
-export default ManageHitItems;
+export default ManageReportItems;

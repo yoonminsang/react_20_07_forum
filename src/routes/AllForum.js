@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./stylesheets/AllForum.css";
 import axios from "axios";
 import { Header, Footer, Menu } from "../containers";
-// import { Menu } from "../components";
+import { RecentForum } from "../components";
 import { Link } from "react-router-dom";
 
 const AllForum = () => {
@@ -42,6 +42,15 @@ const AllForum = () => {
       {items !== null && (
         <>
           <main className="container">
+            <article className="clear">
+              <section className="left_content">
+                <RecentForum></RecentForum>
+              </section>
+              <section className="right_content">
+                여기는 나중에 api같은거 채워넣자여기는 나중에 api같은거
+                채워넣자여기는 나중에 api같은거 채워넣자
+              </section>
+            </article>
             <article className="category_listwrap">
               <h2 className="blind">카테고리별 갤러리 리스트</h2>
               <section className="cate_gall_box">

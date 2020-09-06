@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory, useParams, useLocation, Link } from "react-router-dom";
 import { useInput } from "../hooks";
 
 const ManageHitMenu = ({
@@ -8,11 +8,12 @@ const ManageHitMenu = ({
   stateMenu,
   setStateMenu,
   isChecked,
-  hitSelectOn,
-  hitSelectOff,
   hitSelect,
 }) => {
   const history = useHistory();
+  const location = useLocation();
+  const params = useParams();
+  const status = params.status;
   const changeStateMenu = () => {
     stateMenu === true ? setStateMenu(false) : setStateMenu(true);
   };
@@ -27,6 +28,13 @@ const ManageHitMenu = ({
   };
   const searchMaxLen = (value) => value.length <= 100;
   const search = useInput("", searchMaxLen);
+  const [viewState, setViewState] = useState(false);
+  const changeViewState = () => {
+    viewState === true ? setViewState(false) : setViewState(true);
+  };
+  useEffect(() => {
+    setViewState(false);
+  }, [location.pathname]);
 
   return (
     <>
@@ -172,22 +180,56 @@ const ManageHitMenu = ({
                     type="button"
                     className="btn_g"
                     onClick={hitSelect("on")}
-                    // value="visible"
-                    // onClick={hitSelectOn}
                   ></input>
                 </label>
               </li>
               <li>
                 <label className="lab_btn">
-                  힛 포럼 제거
+                  힛 포럼 대기
+                  <input
+                    type="button"
+                    className="btn_g"
+                    onClick={hitSelect("null")}
+                  ></input>
+                </label>
+              </li>
+              <li>
+                <label className="lab_btn">
+                  힛 포럼 보류
                   <input
                     type="button"
                     className="btn_g"
                     onClick={hitSelect("off")}
-                    // value="hidden"
-                    // onClick={hitSelectOff}
                   ></input>
                 </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={viewState === true ? "opt_blog opt_open" : "opt_blog"}>
+          <button className="btn_opt" type="button" onClick={changeViewState}>
+            보기<span className="ico_blog ico_open"></span>
+          </button>
+          <div className="layer_opt layer_double">
+            <Link to="/manage/hit" className="lab_btn lab_all">
+              힛 포럼 전체보기
+              <input
+                type="button"
+                className="btn_g"
+                value="힛 포럼 보기"
+              ></input>
+            </Link>
+            <strong className="tit_opt">상태별 보기</strong>
+            <ul className="list_opt">
+              <li className={status === "null" ? "on" : null}>
+                <Link to="/manage/hit/null" className="lab_btn">
+                  힛 포럼 대기
+                </Link>
+              </li>
+              <li className={status === "off" ? "on" : null}>
+                <Link to="/manage/hit/off" className="lab_btn">
+                  힛 포럼 보류
+                </Link>
               </li>
             </ul>
           </div>

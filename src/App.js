@@ -20,6 +20,7 @@ import {
   ManageNoticeWriting,
   ManageHit,
   ManageReport,
+  ManagePost,
   ManageNoticeModify,
   HitForum,
 } from "./routes";
@@ -64,9 +65,38 @@ const App = ({ autoSignIn, log }) => {
           path="/manage/notice/create"
           component={ManageNoticeWriting}
         />
+        <Route
+          exact
+          path="/manage/notice/:status/page/:pageId"
+          component={ManageNotice}
+        />
+        <Route exact path="/manage/notice/:status" component={ManageNotice} />
         <Route exact path="/manage/notice" component={ManageNotice} />
+        <Route
+          path="/manage/report/search/type/:type/Keyword/:Keyword"
+          component={ManageReport}
+        />
+        <Route path="/manage/report/page/:pageId" component={ManageReport} />
         <Route exact path="/manage/report" component={ManageReport} />
+        <Route
+          path="/manage/hit/search/type/:type/Keyword/:Keyword/page/:pageId"
+          component={ManageHit}
+        />
+        <Route
+          path="/manage/hit/search/type/:type/Keyword/:Keyword"
+          component={ManageHit}
+        />
+        <Route path="/manage/hit/:status/page/:pageId" component={ManageHit} />
+        <Route path="/manage/hit/:status" component={ManageHit} />
+        <Route path="/manage/hit/page/:pageId" component={ManageHit} />
         <Route exact path="/manage/hit" component={ManageHit} />
+        <Route
+          path="/manage/post/search/type/:type/Keyword/:Keyword"
+          component={ManagePost}
+        />
+        <Route path="/manage/post/category/:category" component={ManagePost} />
+        <Route exact path="/manage/post/page/:pageId" component={ManagePost} />
+        <Route exact path="/manage/post" component={ManagePost} />
         <Route exact path="/manage/category" component={ManageCategory} />
         <Route exact path="/manage" component={ManageHome} />
         <Route exact path="/auth/signup" component={AuthSignUp} />

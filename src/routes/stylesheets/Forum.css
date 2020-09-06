@@ -175,3 +175,25 @@
 .view_bottom_btnbox {
   margin-top: 12px;
 }
+
+.issue_wrap {
+  position: relative;
+  border-top: 2px solid #3c4790;
+  padding-bottom: 37px;
+  z-index: 13;
+}
+
+.listwrap .issue_wrap {
+  padding-bottom: 0;
+}
+
+.issuebox {
+  width: 1158px;
+  background: #fff;
+}
+
+.listwrap .issuebox {
+  width: 840px;
+  display: block;
+  margin-bottom: 15px;
+}

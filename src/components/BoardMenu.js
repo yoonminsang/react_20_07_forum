@@ -28,12 +28,10 @@ const BoardMenu = ({ changePost }) => {
           </button>
           <button
             type="button"
-            className={params.modeType === "notice" ? "on" : null}
-            onClick={() =>
-              history.push(`/forum/${params.category}/mode/notice`)
-            }
+            className={params.modeType === "best" ? "on" : null}
+            onClick={() => history.push(`/forum/${params.category}/mode/best`)}
           >
-            공지
+            베스트글
           </button>
         </div>
         <div className="right_box">
